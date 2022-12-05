@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import "reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap");
+
+// Design Guide
+$pointColor: #000dbf;
+$contentColor: #040000;
+
+body {
+	h1,
+	h2 {
+		font-family: "Montserrat", sans-serif;
+		color: $pointColor;
+	}
+	p {
+		font-family: "Open Sans", sans-serif;
+		color: $contentColor;
+	}
+}
+
+// Header
+header {
+	width: 100%;
+	.inner {
+		width: 1180px;
+		height: 120px;
+		margin: 0 auto;
+		position: relative;
+		> h1 {
+			a {
+				color: $pointColor;
+			}
+		}
+	}
+}
