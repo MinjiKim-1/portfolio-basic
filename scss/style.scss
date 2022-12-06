@@ -6,30 +6,69 @@
 $pointColor: #000dbf;
 $contentColor: #040000;
 
-body {
-	h1,
-	h2 {
-		font-family: "Montserrat", sans-serif;
-		color: $pointColor;
-	}
-	p {
-		font-family: "Open Sans", sans-serif;
-		color: $contentColor;
-	}
+h1,
+h2 {
+	font-family: "Montserrat", sans-serif;
+	color: $pointColor;
+}
+p {
+	font-family: "Open Sans", sans-serif;
+	color: $contentColor;
 }
 
 // Header
 header {
 	width: 100%;
+	background: #ededf7;
 	.inner {
 		width: 1180px;
-		height: 120px;
+		height: 160px;
 		margin: 0 auto;
 		position: relative;
-		> h1 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		h1 {
 			a {
+				font-size: 20px;
+				letter-spacing: 10px;
 				color: $pointColor;
 			}
 		}
+		#gnb {
+			display: flex;
+			li {
+				a {
+					display: block;
+					padding: 10px 12px;
+					font-size: 12px;
+					font-family: "Montserrat", sans-serif;
+					color: $contentColor;
+					border-radius: 20px;
+					margin-left: 20px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				&:hover {
+					a {
+						background: #fff;
+					}
+				}
+				&.on {
+					a {
+						color: $pointColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+figure {
+	.inner {
+		width: 1180px;
+		height: 120px;
+		background: #ededf7;
 	}
 }

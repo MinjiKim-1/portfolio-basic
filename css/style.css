@@ -21,27 +21,61 @@ a {
   opacity: 0;
 }
 
-body h1,
-body h2 {
+h1,
+h2 {
   font-family: "Montserrat", sans-serif;
   color: #000dbf;
 }
-body p {
+
+p {
   font-family: "Open Sans", sans-serif;
   color: #040000;
 }
 
 header {
   width: 100%;
+  background: #ededf7;
 }
 header .inner {
   width: 1180px;
-  height: 120px;
+  height: 160px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-header .inner > h1 a {
+header .inner h1 a {
+  font-size: 20px;
+  letter-spacing: 10px;
   color: #000dbf;
+}
+header .inner #gnb {
+  display: flex;
+}
+header .inner #gnb li a {
+  display: block;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: #040000;
+  border-radius: 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .inner #gnb li:hover a {
+  background: #fff;
+}
+header .inner #gnb li.on a {
+  color: #000dbf;
+}
+
+figure .inner {
+  width: 1180px;
+  height: 120px;
+  background: #ededf7;
 }
 
 /*# sourceMappingURL=style.css.map */
