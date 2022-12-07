@@ -32,50 +32,376 @@ p {
   color: #040000;
 }
 
-header {
+/* Header */
+#header {
   width: 100%;
-  background: #ededf7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
-header .inner {
+#header .inner {
   width: 1180px;
-  height: 160px;
+  height: 170px;
   margin: 0 auto;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .inner h1 a {
-  font-size: 20px;
+#header .inner h1 a {
+  font-size: 25px;
   letter-spacing: 10px;
   color: #000dbf;
 }
-header .inner #gnb {
+#header .inner #gnb {
   display: flex;
 }
-header .inner #gnb li a {
+#header .inner #gnb li a {
   display: block;
-  padding: 10px 12px;
-  font-size: 12px;
+  padding: 10px 15px;
+  font-size: 15px;
   font-family: "Montserrat", sans-serif;
   color: #040000;
   border-radius: 20px;
-  margin-left: 20px;
+  margin-left: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .inner #gnb li:hover a {
+#header .inner #gnb li:hover a {
   background: #fff;
 }
-header .inner #gnb li.on a {
+#header .inner #gnb li.on a {
   color: #000dbf;
 }
 
-figure .inner {
+/* Visual */
+#visual {
+  width: 100%;
+  padding-top: 160px;
+  position: relative;
+}
+#visual .inner {
   width: 1180px;
-  height: 120px;
+  height: 800px;
+  padding: 0px 12px;
+  margin: 0 auto;
+  position: relative;
+}
+#visual .inner .boxWrap {
+  width: 730px;
+  position: absolute;
+  top: 150px;
+  right: 12px;
+  z-index: 10;
+}
+#visual .inner .boxWrap .lineBox {
+  width: 100%;
+  border: 5px solid #000dbf;
+  padding: 50px;
+  margin-bottom: 20px;
+  text-align: right;
+  justify-content: right;
+}
+#visual .inner .boxWrap .lineBox h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+#visual .inner .boxWrap .lineBox h3 {
+  font: bold 50px/1 "Montserrat";
+  color: #000dbf;
+  margin-bottom: 20px;
+}
+#visual .inner .boxWrap .lineBox p {
+  font: bold 20px/1 "Montserrat";
+  color: #000dbf;
+  margin-bottom: 5px;
+}
+#visual .inner .boxWrap .btnMore {
+  float: right;
+  right: 0px;
+  width: 170px;
+  display: block;
+  padding: 20px;
+  font: normal 12px/1 "Montserrat";
+  color: #fff;
+  border-radius: 5px;
+  background: #000dbf;
+  text-align: center;
+}
+#visual #sliderMain {
+  width: 100%;
+}
+#visual #sliderMain ul {
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+}
+#visual #sliderMain ul li {
+  width: 33.3333333333%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+#visual #sliderMain ul li[data-index="1"] {
   background: #ededf7;
+}
+#visual #sliderMain ul li[data-index="1"] div {
+  width: 1200px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+#visual #sliderMain ul li[data-index="1"] div img {
+  width: 95%;
+  height: 95;
+  object-fit: cover;
+}
+#visual #sliderMain ul li[data-index="2"] {
+  background: #f6edf7;
+}
+#visual #sliderMain ul li[data-index="2"] div {
+  width: 1300px;
+  position: absolute;
+  top: -2%;
+  left: 10%;
+}
+#visual #sliderMain ul li[data-index="2"] div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#visual #sliderMain ul li[data-index="3"] {
+  background: #f7efed;
+}
+#visual #sliderMain ul li[data-index="3"] div {
+  width: 1200px;
+  position: absolute;
+  top: 15%;
+  left: 14%;
+}
+#visual #sliderMain ul li[data-index="3"] div img {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+}
+#visual #sliderMain .btnPrev,
+#visual #sliderMain .btnNext {
+  padding: 20px;
+  font-size: 15px;
+  color: #040000;
+  text-align: center;
+}
+#visual #sliderMain .btnPrev span,
+#visual #sliderMain .btnNext span {
+  display: block;
+  font: normal 12px/1 "Montserrat";
+}
+#visual #sliderMain .btnPrev {
+  position: absolute;
+  top: 30vh;
+  left: 10vw;
+}
+#visual #sliderMain .btnPrev::after {
+  margin-top: 5px;
+  float: right;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #000dbf;
+  transition: 0.3s;
+}
+#visual #sliderMain .btnPrev:hover::after {
+  width: 100%;
+}
+#visual #sliderMain .btnNext {
+  position: absolute;
+  top: 30vh;
+  right: 10vw;
+}
+#visual #sliderMain .btnNext::after {
+  margin-top: 5px;
+  float: left;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #000dbf;
+  transition: 0.3s;
+}
+#visual #sliderMain .btnNext:hover::after {
+  width: 100%;
+}
+#visual #sliderMain .pagination {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  translate: translate(50%, 50%);
+}
+#visual #sliderMain .pagination a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #000dbf;
+  border-radius: 50%;
+  float: left;
+  margin: 20px 4px;
+}
+#visual #sliderMain .pagination a.on {
+  background: #000dbf;
+}
+
+/* Introduce */
+#introduce {
+  width: 100%;
+  padding: 160px 0px;
+  position: relative;
+  overflow: hidden;
+}
+#introduce .inner {
+  width: 1180px;
+  padding: 0px 12px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#introduce .inner .subTab {
+  float: left;
+  margin-right: 140px;
+}
+#introduce .inner .subTab li {
+  width: 170px;
+  height: 170px;
+  background: #f2f3f8;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#introduce .inner .subTab li a {
+  display: block;
+  color: #000dbf;
+  text-align: center;
+}
+#introduce .inner .subTab li a i {
+  color: #000dbf;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+#introduce .inner .subTab li a strong {
+  display: block;
+}
+#introduce .inner .subTab li.on {
+  background: #000dbf;
+}
+#introduce .inner .subTab li.on i {
+  color: #ededf7;
+}
+#introduce .inner .subTab li.on a {
+  color: #fff;
+}
+#introduce .inner article {
+  float: left;
+  width: 500px;
+}
+#introduce .inner article h2 {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+#introduce .inner article p {
+  margin-bottom: 40px;
+}
+#introduce .inner article ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  line-height: 20px/30px;
+}
+#introduce .inner article ul li::marker {
+  font-size: 30px;
+  color: #000dbf;
+}
+#introduce .inner .bgWatch {
+  position: absolute;
+  top: -100%;
+  right: -50%;
+  transform: rotate(-40deg);
+  z-index: -1;
+}
+
+#magazine {
+  width: 100%;
+}
+#magazine .inner {
+  width: 1180px;
+  padding: 0px 12px;
+  margin: 0 auto;
+  position: relative;
+}
+#magazine .inner .boxWrap {
+  width: 900px;
+  position: absolute;
+  top: 150px;
+  left: 12px;
+  z-index: 10;
+}
+#magazine .inner .boxWrap .lineBox {
+  width: 100%;
+  border: 5px solid #000dbf;
+  padding: 50px;
+  margin-bottom: 20px;
+  text-align: right;
+  justify-content: right;
+}
+#magazine .inner .boxWrap .lineBox h2 {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+#magazine .inner .boxWrap .lineBox .btnMore {
+  float: right;
+  width: 170px;
+  display: block;
+  padding: 20px;
+  font: normal 12px/1 "Montserrat";
+  color: #fff;
+  border-radius: 5px;
+  background: #000dbf;
+  text-align: center;
+}
+#magazine .photo {
+  position: absolute;
+  right: 0;
+  width: 60vw;
+  height: 890px;
+}
+#magazine .photo .btnNext {
+  display: block;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 50%;
+  right: 10vw;
+  transform: translateY(50%);
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  background: #000dbf;
+  padding-top: 65px;
+  float: right;
+}
+#magazine .photo .btnNext span {
+  display: block;
+  font: normal 12px/1 "Montserrat";
+}
+#magazine .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */

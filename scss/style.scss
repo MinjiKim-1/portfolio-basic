@@ -16,21 +16,23 @@ p {
 	color: $contentColor;
 }
 
-// Header
-header {
+/* Header */
+#header {
 	width: 100%;
-	background: #ededf7;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
 	.inner {
 		width: 1180px;
-		height: 160px;
+		height: 170px;
 		margin: 0 auto;
-		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		h1 {
 			a {
-				font-size: 20px;
+				font-size: 25px;
 				letter-spacing: 10px;
 				color: $pointColor;
 			}
@@ -40,12 +42,12 @@ header {
 			li {
 				a {
 					display: block;
-					padding: 10px 12px;
-					font-size: 12px;
+					padding: 10px 15px;
+					font-size: 15px;
 					font-family: "Montserrat", sans-serif;
 					color: $contentColor;
 					border-radius: 20px;
-					margin-left: 20px;
+					margin-left: 15px;
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -64,11 +66,336 @@ header {
 		}
 	}
 }
-
-figure {
+/* Visual */
+#visual {
+	width: 100%;
+	padding-top: 160px;
+	position: relative;
 	.inner {
 		width: 1180px;
-		height: 120px;
-		background: #ededf7;
+		height: 800px;
+		padding: 0px 12px;
+		margin: 0 auto;
+		position: relative;
+		.boxWrap {
+			width: 730px;
+			position: absolute;
+			top: 150px;
+			right: 12px;
+			z-index: 10;
+			.lineBox {
+				width: 100%;
+				border: 5px solid $pointColor;
+				padding: 50px;
+				margin-bottom: 20px;
+				text-align: right;
+				justify-content: right;
+				h2 {
+					font-size: 25px;
+					margin-bottom: 20px;
+				}
+				h3 {
+					font: bold 50px/1 "Montserrat";
+					color: $pointColor;
+					margin-bottom: 20px;
+				}
+				p {
+					font: bold 20px/1 "Montserrat";
+					color: $pointColor;
+					margin-bottom: 5px;
+				}
+			}
+			.btnMore {
+				float: right;
+				right: 0px;
+				width: 170px;
+				display: block;
+				padding: 20px;
+				font: normal 12px/1 "Montserrat";
+				color: #fff;
+				border-radius: 5px;
+				background: $pointColor;
+				text-align: center;
+			}
+		}
+	}
+	#sliderMain {
+		width: 100%;
+		ul {
+			width: 100%;
+			height: 800px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% * 3);
+			height: 100%;
+			li {
+				width: calc(100% / 3);
+				height: 100%;
+				float: left;
+				position: relative;
+				&[data-index="1"] {
+					background: #ededf7;
+					div {
+						width: 1200px;
+						position: absolute;
+						top: 0;
+						left: 10%;
+						img {
+							width: 95%;
+							height: 95;
+							object-fit: cover;
+						}
+					}
+				}
+				&[data-index="2"] {
+					background: #f6edf7;
+					div {
+						width: 1300px;
+						position: absolute;
+						top: -2%;
+						left: 10%;
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+				&[data-index="3"] {
+					background: #f7efed;
+					div {
+						width: 1200px;
+						position: absolute;
+						top: 15%;
+						left: 14%;
+						img {
+							width: 75%;
+							height: 75%;
+							object-fit: cover;
+						}
+					}
+				}
+			}
+		}
+		.btnPrev,
+		.btnNext {
+			padding: 20px;
+			font-size: 15px;
+			color: $contentColor;
+			text-align: center;
+			span {
+				display: block;
+				font: normal 12px/1 "Montserrat";
+			}
+		}
+		.btnPrev {
+			position: absolute;
+			top: 30vh;
+			left: 10vw;
+			&::after {
+				margin-top: 5px;
+				float: right;
+				display: block;
+				content: "";
+				width: 0%;
+				height: 2px;
+				background: $pointColor;
+				transition: 0.3s;
+			}
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+		.btnNext {
+			position: absolute;
+			top: 30vh;
+			right: 10vw;
+			&::after {
+				margin-top: 5px;
+				float: left;
+				display: block;
+				content: "";
+				width: 0%;
+				height: 2px;
+				background: $pointColor;
+				transition: 0.3s;
+			}
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+		.pagination {
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			translate: translate(50%, 50%);
+			a {
+				display: block;
+				width: 10px;
+				height: 10px;
+				border: 2px solid $pointColor;
+				border-radius: 50%;
+				float: left;
+				margin: 20px 4px;
+				&.on {
+					background: $pointColor;
+				}
+			}
+		}
+	}
+}
+
+/* Introduce */
+#introduce {
+	width: 100%;
+	padding: 160px 0px;
+	position: relative;
+	overflow: hidden;
+	.inner {
+		width: 1180px;
+		padding: 0px 12px;
+		margin: 0 auto;
+		position: relative;
+		display: flex;
+		align-items: center;
+		.subTab {
+			float: left;
+			margin-right: 140px;
+			li {
+				width: 170px;
+				height: 170px;
+				background: #f2f3f8;
+				margin-bottom: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				a {
+					display: block;
+					color: $pointColor;
+					text-align: center;
+					i {
+						color: $pointColor;
+						font-size: 50px;
+						margin-bottom: 10px;
+					}
+					strong {
+						display: block;
+					}
+				}
+				&.on {
+					background: $pointColor;
+					i {
+						color: #ededf7;
+					}
+					a {
+						color: #fff;
+					}
+				}
+			}
+		}
+		article {
+			float: left;
+			width: 500px;
+			h2 {
+				font-size: 50px;
+				margin-bottom: 40px;
+			}
+			p {
+				margin-bottom: 40px;
+			}
+			ul {
+				li {
+					list-style-type: disc;
+					list-style-position: inside;
+					line-height: 20px/30px;
+					&::marker {
+						font-size: 30px;
+						color: $pointColor;
+					}
+				}
+			}
+		}
+		.bgWatch {
+			position: absolute;
+			top: -100%;
+			right: -50%;
+			transform: rotate(-40deg);
+			z-index: -1;
+		}
+	}
+}
+
+#magazine {
+	width: 100%;
+	.inner {
+		width: 1180px;
+		padding: 0px 12px;
+		margin: 0 auto;
+		position: relative;
+		.boxWrap {
+			width: 900px;
+			position: absolute;
+			top: 150px;
+			left: 12px;
+			z-index: 10;
+			.lineBox {
+				width: 100%;
+				border: 5px solid $pointColor;
+				padding: 50px;
+				margin-bottom: 20px;
+				text-align: right;
+				justify-content: right;
+				h2 {
+					font-size: 50px;
+					margin-bottom: 40px;
+				}
+				.btnMore {
+					float: right;
+					width: 170px;
+					display: block;
+					padding: 20px;
+					font: normal 12px/1 "Montserrat";
+					color: #fff;
+					border-radius: 5px;
+					background: $pointColor;
+					text-align: center;
+				}
+			}
+		}
+	}
+	.photo {
+		position: absolute;
+		right: 0;
+		width: 60vw;
+		height: 890px;
+		.btnNext {
+			display: block;
+			width: 170px;
+			height: 170px;
+			position: absolute;
+			top: 50%;
+			right: 10vw;
+			transform: translateY(50%);
+			font-size: 15px;
+			color: #fff;
+			text-align: center;
+			background: $pointColor;
+			padding-top: 65px;
+			float: right;
+			span {
+				display: block;
+				font: normal 12px/1 "Montserrat";
+			}
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }

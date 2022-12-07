@@ -8,6 +8,7 @@
     <title>Portfolio Basic</title>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/anime.js"></script>
     <script src="https://kit.fontawesome.com/579590574d.js" crossorigin="anonymous"></script>
 </head>
 
@@ -33,44 +34,59 @@
         </div>
     </header>
     <!-- Figure -->
-    <figure>
+    <figure id="visual">
         <div class="inner">
-            <div class="wrap">
+            <div class="boxWrap">
                 <div class="lineBox">
                     <h2>BASIC</h2>
                     <h3>MINIMALISTIC DESIGN</h3>
-                    <p>innovate concept</p>
+                    <p>innovative concept</p>
                 </div>
                 <a href="#" class="btnMore">READ MORE</a>
             </div>
-            <div id="sliderMain">
-                <!-- slider -->
-                <ul>
-                    <li data-index="1"><img src="img/slide_main1.png" alt=""></li>
-                    <li data-index="2"><img src="img/slide_main2.png" alt=""></li>
-                    <li data-index="3"><img src="img/slide_main3.png" alt=""></li>
-                </ul>
-                <!-- button -->
-                <a href="#" class="btnNext">
-                    <i class="fas fa-long-arrow-alt-right"></i>
-                    <span>NEXT</span>
-                </a>
-                <!-- pagination -->
-                <p class="pagination">
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                </p>
-            </div>
         </div>
         <!-- Main Slider -->
-
+        <div id="sliderMain">
+            <!-- slider -->
+            <ul>
+                <li data-index="1">
+                    <div>
+                        <img src="img/slide_main1.png" alt="">
+                    </div>
+                </li>
+                <li data-index="2">
+                    <div>
+                        <img src="img/slide_main2.png" alt="">
+                    </div>
+                </li>
+                <li data-index="3">
+                    <div>
+                        <img src="img/slide_main3.png" alt="">
+                    </div>
+                </li>
+            </ul>
+            <!-- button -->
+            <a href="#" class="btnPrev">
+                <i class="fas fa-long-arrow-alt-left"></i>
+                <span>PREV</span>
+            </a>
+            <a href="#" class="btnNext">
+                <i class="fas fa-long-arrow-alt-right"></i>
+                <span>NEXT</span>
+            </a>
+            <!-- pagination -->
+            <p class="pagination">
+                <a href="#" class="on"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </p>
+        </div>
     </figure>
     <!-- Section Introduce -->
     <section id="introduce">
         <div class="inner">
-            <ul>
-                <li>
+            <ul class="subTab">
+                <li class="on">
                     <a href="">
                         <i class="fas fa-shopping-bag"></i>
                         <strong>Why Buy?</strong>
@@ -102,12 +118,15 @@
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
                 </ul>
             </article>
+            <div class="bgWatch">
+                <img src="img/watch1.png" alt="">
+            </div>
         </div>
     </section>
     <!-- Section Magazine -->
     <section id="magazine">
         <div class="inner">
-            <div class="wrap">
+            <div class="boxWrap">
                 <div class="lineBox">
                     <h2>Paint your portrait</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum vel nisi inventore nulla nemo quae,
@@ -117,12 +136,13 @@
                     <a href="#" class="btnMore">READ MORE</a>
                 </div>
             </div>
-            <div class="photo">
-                <a href="#" class="btnNext">
-                    <i class="fas fa-long-arrow-alt-right"></i>
-                    <span>NEXT</span>
-                </a>
-            </div>
+        </div>
+        <div class="photo">
+            <a href="#" class="btnNext">
+                <i class="fas fa-long-arrow-alt-right"></i>
+                <span>NEXT</span>
+            </a>
+            <img src="img/magazine.png" alt="">
         </div>
     </section>
     <!-- Section Skill -->
