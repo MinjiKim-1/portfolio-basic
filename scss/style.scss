@@ -310,7 +310,7 @@ p {
 				li {
 					list-style-type: disc;
 					list-style-position: inside;
-					line-height: 20px/30px;
+					line-height: 30px;
 					&::marker {
 						font-size: 30px;
 						color: $pointColor;
@@ -457,8 +457,79 @@ p {
 	width: 100%;
 	padding: 160px 0px;
 	.inner {
-		width: 1180px;
+		width: 100%;
 		margin: 0 auto;
 		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		div {
+			display: block;
+			width: 18%;
+			height: 350px;
+			&:nth-of-type(1) {
+				background: url(../img/img1.jpg) no-repeat
+					center/contain;
+			}
+			&:nth-of-type(2) {
+				background: url(../img/img2.png) no-repeat
+					center/cover #f5f5f5;
+			}
+			&:nth-of-type(3) {
+				width: auto;
+				background: $pointColor;
+				padding: 50px;
+				i {
+					font-size: 30px;
+					color: #fff;
+					margin-bottom: 10px;
+				}
+				h1 {
+					font-size: 15px;
+					color: #fff;
+					margin-bottom: 30px;
+				}
+				p {
+					font-size: 12px;
+					color: #fff;
+				}
+			}
+			&:nth-of-type(4) {
+				height: 18%;
+				background: url(../img/img4.png) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(5) {
+				width: auto;
+				background: url(../img/img5.png) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(6) {
+				background: url(../img/img6.png) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(7) {
+				background: url(../img/img7.png) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(8) {
+				background: url(../img/img8.png) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(9) {
+				background: url(../img/img9.jpg) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(10) {
+				background: url(../img/img10.jpg) no-repeat
+					center/cover;
+			}
+			&:nth-of-type(11) {
+				width: auto;
+				background: url(../img/img11.jpg) no-repeat
+					center/cover;
+			}
+		}
 	}
 }
