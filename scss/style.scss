@@ -411,7 +411,7 @@ body {
 }
 #skill {
 	width: 100%;
-	padding-top: 160px;
+	padding: 160px 0 50px;
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
@@ -463,7 +463,6 @@ body {
 
 #collection {
 	width: 100%;
-	margin-top: 100px;
 	.inner {
 		width: 100%;
 		margin: 0 auto;
@@ -536,28 +535,94 @@ body {
 				float: right;
 				background: url(../img/img11.jpg) no-repeat
 					bottom center/cover;
-				&::after {
-					content: "";
-					display: block;
-					clear: both;
-				}
 			}
+		}
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
 		}
 	}
 }
 #quote {
 	width: 100%;
-	height: 370px;
+	padding: 100px 0px;
 	.inner {
 		width: 1180px;
-		padding: 50px;
+		height: 100%;
 		margin: 0 auto;
 		position: relative;
+
 		p {
-			width: 100%;
 			font-size: 15px;
 			text-align: center;
 			font-family: "Montserrat", sans-serif;
+			line-height: 1.6;
+			margin-bottom: 50px;
+		}
+		strong {
+			display: block;
+			font-size: 15px;
+			text-align: center;
+			color: $pointColor;
+			span {
+				font-size: 12px;
+				line-height: 1.6;
+				color: $contentColor;
+			}
+		}
+	}
+}
+#concept {
+	width: 100%;
+	height: 780px;
+	padding: 110px 0px;
+	background-color: #f6f6f6;
+	background-image: url(../img/headphone1.png);
+	background-repeat: no-repeat;
+	background-position: center left;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+		align-items: center;
+		text-align: right;
+		h1 {
+			font-size: 30px;
+			color: $pointColor;
+			margin-bottom: 60px;
+		}
+		p {
+			font-size: 15px;
+			font-family: "Montserrat", sans-serif;
+			margin-bottom: 50px;
+		}
+		.wrap {
+			width: 580px;
+			position: absolute;
+			right: 0px;
+			z-index: 10;
+			article {
+				float: left;
+				width: 280px;
+				margin-left: 20px;
+				&:nth-of-type(2n) {
+					margin-left: 0px;
+					margin-bottom: 100px;
+				}
+				a {
+					display: block;
+					i {
+						color: $pointColor;
+						font-size: 30px;
+						margin-bottom: 10px;
+					}
+					h2 {
+						font-size: 15px;
+						margin-bottom: 30px;
+					}
+				}
+			}
 		}
 	}
 }
