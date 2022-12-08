@@ -16,6 +16,10 @@ p {
 	color: $contentColor;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 /* Header */
 #header {
 	width: 100%;
@@ -133,7 +137,7 @@ p {
 				height: 100%;
 				float: left;
 				position: relative;
-				&[data-index="1"] {
+				&[data-index="0"] {
 					background: #ededf7;
 					div {
 						width: 1200px;
@@ -147,7 +151,7 @@ p {
 						}
 					}
 				}
-				&[data-index="2"] {
+				&[data-index="1"] {
 					background: #f6edf7;
 					div {
 						width: 1300px;
@@ -161,7 +165,7 @@ p {
 						}
 					}
 				}
-				&[data-index="3"] {
+				&[data-index="2"] {
 					background: #f7efed;
 					div {
 						width: 1200px;
@@ -179,6 +183,9 @@ p {
 		}
 		.btnPrev,
 		.btnNext {
+			position: absolute;
+			top: 400px;
+			z-index: 10;
 			padding: 20px;
 			font-size: 15px;
 			color: $contentColor;
@@ -189,8 +196,6 @@ p {
 			}
 		}
 		.btnPrev {
-			position: absolute;
-			top: 400px;
 			left: 10vw;
 			&::after {
 				margin-top: 5px;
@@ -209,8 +214,6 @@ p {
 			}
 		}
 		.btnNext {
-			position: absolute;
-			top: 400px;
 			right: 10vw;
 			&::after {
 				margin-top: 5px;
@@ -308,12 +311,17 @@ p {
 			}
 			ul {
 				li {
-					list-style-type: disc;
-					list-style-position: inside;
 					line-height: 30px;
-					&::marker {
-						font-size: 30px;
-						color: $pointColor;
+					margin-left: 20px;
+					&::before {
+						content: "";
+						transform: translate(-22px, 22px);
+						display: block;
+						width: 12px;
+						height: 12px;
+						border-radius: 50%;
+						background: $pointColor;
+						background: $pointColor;
 					}
 				}
 			}
@@ -403,7 +411,7 @@ p {
 }
 #skill {
 	width: 100%;
-	padding: 160px 0px;
+	padding-top: 160px;
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
@@ -455,29 +463,25 @@ p {
 
 #collection {
 	width: 100%;
-	padding: 160px 0px;
+	margin-top: 100px;
 	.inner {
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
 		div {
-			display: block;
-			width: 18%;
+			width: calc(100% / 5.5);
 			height: 350px;
+			float: left;
 			&:nth-of-type(1) {
 				background: url(../img/img1.jpg) no-repeat
-					center/contain;
+					bottom/cover;
 			}
 			&:nth-of-type(2) {
 				background: url(../img/img2.png) no-repeat
 					center/cover #f5f5f5;
 			}
 			&:nth-of-type(3) {
-				width: auto;
+				width: calc((100% / 5.5) * 2.5);
 				background: $pointColor;
 				padding: 50px;
 				i {
@@ -496,14 +500,16 @@ p {
 				}
 			}
 			&:nth-of-type(4) {
-				height: 18%;
+				height: 700px;
+				float: right;
 				background: url(../img/img4.png) no-repeat
 					center/cover;
 			}
 			&:nth-of-type(5) {
-				width: auto;
+				width: calc((100% / 5.5) * 2.5);
+				float: left;
 				background: url(../img/img5.png) no-repeat
-					center/cover;
+					center/cover rgb(241, 244, 255);
 			}
 			&:nth-of-type(6) {
 				background: url(../img/img6.png) no-repeat
@@ -526,10 +532,32 @@ p {
 					center/cover;
 			}
 			&:nth-of-type(11) {
-				width: auto;
+				width: calc((100% / 5.5) * 2.5);
+				float: right;
 				background: url(../img/img11.jpg) no-repeat
-					center/cover;
+					bottom center/cover;
+				&::after {
+					content: "";
+					display: block;
+					clear: both;
+				}
 			}
+		}
+	}
+}
+#quote {
+	width: 100%;
+	height: 370px;
+	.inner {
+		width: 1180px;
+		padding: 50px;
+		margin: 0 auto;
+		position: relative;
+		p {
+			width: 100%;
+			font-size: 15px;
+			text-align: center;
+			font-family: "Montserrat", sans-serif;
 		}
 	}
 }

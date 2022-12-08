@@ -59,16 +59,7 @@ function nextSlide() {
             enableClick = true;
         }
     })
-
-    // pagination
-    for (let el of paging) el.classList.remove("on");
-    let pageArr = ul.querySelectorAll("li");
-    console.log(pageArr[1]);
-    let pageNow = pageArr[1].getAttribute("data-index");
-    console.log(pageNow);
-    console.log(typeof (pageNow));
-    paging[pageNow].classList.add("on");
-
+    pagination(2);
 }
 
 function prevSlide() {
@@ -82,15 +73,7 @@ function prevSlide() {
             enableClick = true;
         }
     })
-
-    // pagination
-    for (let el of paging) el.classList.remove("on");
-    let pageArr = ul.querySelectorAll("li");
-    console.log(pageArr[1]);
-    let pageNow = pageArr[1].getAttribute("data-index");
-    console.log(pageNow);
-    paging[pageNow].classList.add("on");
-
+    pagination(0);
 }
 
 
@@ -100,4 +83,10 @@ function activation(arr, index) {
     arr[index].classList.add("on");
 }
 
-
+// pagination
+function pagination(n) {
+    for (let el of paging) el.classList.remove("on");
+    let pageArr = ul.querySelectorAll("li");
+    let pageNow = pageArr[n].getAttribute("data-index");
+    paging[pageNow].classList.add("on");
+}
