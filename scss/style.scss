@@ -593,8 +593,9 @@ body {
 			margin-bottom: 60px;
 		}
 		p {
-			font-size: 15px;
-			font-family: "Montserrat", sans-serif;
+			font-size: 12px;
+			font-family: "Open Sans", sans-serif;
+			line-height: 1.6;
 			margin-bottom: 50px;
 		}
 		.wrap {
@@ -606,9 +607,13 @@ body {
 				float: left;
 				width: 280px;
 				margin-left: 20px;
-				&:nth-of-type(2n) {
+				&:nth-of-type(1),
+				&:nth-of-type(3) {
 					margin-left: 0px;
-					margin-bottom: 100px;
+				}
+				h2 {
+					font-size: 16px;
+					margin-bottom: 20px;
 				}
 				a {
 					display: block;
@@ -623,6 +628,48 @@ body {
 					}
 				}
 			}
+		}
+	}
+}
+#banner {
+	width: 100%;
+	padding: 150px 0;
+	background: url(../img/bg.jpg) no-repeat center/cover
+		fixed;
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: $pointColor;
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0.7;
+	}
+	.inner {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		h2 {
+			color: #fff;
+			margin-right: 40px;
+		}
+		.btnMore {
+			float: right;
+			right: 0px;
+			width: 170px;
+			display: block;
+			padding: 20px;
+			font: normal 12px/1 "Montserrat";
+			color: $pointColor;
+			border-radius: 5px;
+			background: #fff;
+			text-align: center;
 		}
 	}
 }
