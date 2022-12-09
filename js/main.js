@@ -104,7 +104,6 @@ paging.forEach((el, index) => {
 //         // console.log(pageNow);
 //         // console.log(index);
 
-//         // if (index)
 //         // // nextSlide(index);
 //         // // prevSlide(index);
 
