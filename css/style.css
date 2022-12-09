@@ -207,7 +207,7 @@ body {
 }
 #visual #sliderMain ul li[data-index="0"] div img {
   width: 95%;
-  height: 95;
+  height: 95%;
   object-fit: cover;
 }
 #visual #sliderMain ul li[data-index="1"] {
@@ -563,6 +563,7 @@ body {
 #skill .inner .wrap article {
   float: left;
   width: 380px;
+  position: relative;
   margin-right: 20px;
 }
 #skill .inner .wrap article i {
@@ -577,6 +578,8 @@ body {
 #skill .inner .wrap article h2::after {
   margin-top: 10px;
   display: block;
+  position: absolute;
+  left: 0;
   content: "";
   width: 0%;
   height: 2px;
@@ -713,7 +716,7 @@ body {
   height: 30px;
   position: absolute;
   top: -40px;
-  transition: 0.3s 0s, transform 0.3s 0.5s;
+  transition: 0.2s 0s, transform 0.2s 0.3s;
 }
 #collection .inner div:nth-of-type(3) article .btnPlus::before {
   content: "";
@@ -724,7 +727,7 @@ body {
   position: absolute;
   bottom: 15px;
   left: 0;
-  transition: 0.3s 0s, transform 0.3s 0.5s;
+  transition: 0.2s 0s, transform 0.2s 0.3s;
 }
 #collection .inner div:nth-of-type(3) article .btnPlus::after {
   content: "";
@@ -735,7 +738,7 @@ body {
   position: absolute;
   bottom: 15px;
   left: 0;
-  transition: 0.3s 0s, transform 0.3s 0.5s;
+  transition: 0.2s 0s, transform 0.2s 0.5s;
 }
 #collection .inner div:nth-of-type(3) article h1 {
   font-size: 25px;
@@ -846,6 +849,7 @@ body {
   float: right;
   width: 280px;
   margin-right: 20px;
+  position: relative;
 }
 #concept .inner .wrap article:nth-of-type(1), #concept .inner .wrap article:nth-of-type(3) {
   margin-right: 0px;
@@ -868,17 +872,17 @@ body {
 }
 #concept .inner .wrap article h2::after {
   margin-top: 10px;
-  float: right;
   display: block;
+  position: absolute;
+  right: 0;
   content: "";
-  width: 0%;
+  width: 0px;
   height: 2px;
-  background: #fff;
+  background: #000dbf;
   transition: 0.3s;
 }
 #concept .inner .wrap article:hover h2::after {
-  width: 100%;
-  background: #000dbf;
+  width: 280px;
 }
 
 #banner {

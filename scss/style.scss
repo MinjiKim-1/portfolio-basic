@@ -190,7 +190,7 @@ body {
 						left: 10%;
 						img {
 							width: 95%;
-							height: 95;
+							height: 95%;
 							object-fit: cover;
 						}
 					}
@@ -533,6 +533,7 @@ body {
 			article {
 				float: left;
 				width: 380px;
+				position: relative;
 				margin-right: 20px;
 				i {
 					color: $pointColor;
@@ -545,6 +546,8 @@ body {
 					&::after {
 						margin-top: 10px;
 						display: block;
+						position: absolute;
+						left: 0;
 						content: "";
 						width: 0%;
 						height: 2px;
@@ -622,8 +625,8 @@ body {
 						height: 30px;
 						position: absolute;
 						top: -40px;
-						transition: 0.3s 0s,
-							transform 0.3s 0.5s;
+						transition: 0.2s 0s,
+							transform 0.2s 0.3s;
 						&::before {
 							content: "";
 							display: block;
@@ -633,8 +636,8 @@ body {
 							position: absolute;
 							bottom: 15px;
 							left: 0;
-							transition: 0.3s 0s,
-								transform 0.3s 0.5s;
+							transition: 0.2s 0s,
+								transform 0.2s 0.3s;
 						}
 						&::after {
 							content: "";
@@ -645,8 +648,8 @@ body {
 							position: absolute;
 							bottom: 15px;
 							left: 0;
-							transition: 0.3s 0s,
-								transform 0.3s 0.5s;
+							transition: 0.2s 0s,
+								transform 0.2s 0.5s;
 						}
 					}
 
@@ -752,7 +755,6 @@ body {
 		p {
 			font-size: 12px;
 			font-family: "Montserrat", sans-serif;
-			// font-family: "Open Sans", sans-serif;
 			line-height: 1.6;
 			margin-bottom: 100px;
 		}
@@ -765,6 +767,7 @@ body {
 				float: right;
 				width: 280px;
 				margin-right: 20px;
+				position: relative;
 				&:nth-of-type(1),
 				&:nth-of-type(3) {
 					margin-right: 0px;
@@ -784,21 +787,22 @@ body {
 				h2 {
 					font-size: 15px;
 					margin-bottom: 20px;
+
 					&::after {
 						margin-top: 10px;
-						float: right;
 						display: block;
+						position: absolute;
+						right: 0;
 						content: "";
-						width: 0%;
+						width: 0px;
 						height: 2px;
-						background: #fff;
+						background: $pointColor;
 						transition: 0.3s;
 					}
 				}
 				&:hover h2 {
 					&::after {
-						width: 100%;
-						background: $pointColor;
+						width: 280px;
 					}
 				}
 			}

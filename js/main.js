@@ -56,7 +56,7 @@ btnNext.addEventListener("click", (e) => {
     let isOn = e.currentTarget.classList.contains("on");
     if (isOn) return;
     if (enableClick) {
-        nextSlide();
+        nextSlide(2);
         enableClick = false;
     }
 })
@@ -68,27 +68,62 @@ btnPrev.addEventListener("click", (e) => {
     let isOn = e.currentTarget.classList.contains("on");
     if (isOn) return;
     if (enableClick) {
-        prevSlide();
+        prevSlide(0);
         enableClick = false;
     }
 })
 
+
+
+
 paging.forEach((el, index) => {
-    el.addEventListener("click", () => {
-        for (let el of paging) el.classList.remove("on");
+    el.addEventListener("click", (e) => {
+        e.preventDefault();
         new Anim(ul, {
             prop: "left",
-            value: "-200%",
+            value: -100 * index + "%",
             duration: speed,
-            callback: () => {
-                ul.append(ul.firstElementChild)
-                ul.style.left = "-100%";
-                enableClick = true;
-            }
-        })
-        el.classList.add("on");
-    })
-})
+        });
+        activation(paging, index);
+    });
+});
+
+
+
+
+
+// paging.forEach((el, index) => {
+//     el.addEventListener("click", (e) => {
+
+//         // let pageArr = ul.querySelectorAll("li");
+//         // let pageNow = pageArr[index].getAttribute("data-index");
+
+//         // console.log(paging.indexOf("a.on"));
+//         // console.log(paging);
+//         // console.log(pageArr);
+//         // console.log(pageNow);
+//         // console.log(index);
+
+//         // if (index)
+//         // // nextSlide(index);
+//         // // prevSlide(index);
+
+//         for (let el of paging) el.classList.remove("on");
+//         new Anim(ul, {
+//             prop: "left",
+//             value: -100 * (index) + "%",
+//             duration: speed,
+//             callback: () => {
+//                 ul.append(ul.firstElementChild)
+//                 ul.style.left = "-100%";
+//                 enableClick = true;
+//             }
+//         })
+//         el.classList.add("on");
+//     })
+// })
+
+
 
 
 
@@ -159,10 +194,10 @@ function init() {
     ul.prepend(ul.lastElementChild)
 }
 
-function nextSlide() {
+function nextSlide(n) {
     new Anim(ul, {
         prop: "left",
-        value: "-200%",
+        value: -100 * n + "%",
         duration: speed,
         callback: () => {
             ul.append(ul.firstElementChild)
@@ -170,13 +205,13 @@ function nextSlide() {
             enableClick = true;
         }
     })
-    pagination(2);
+    pagination(n);
 }
 
-function prevSlide() {
+function prevSlide(n) {
     new Anim(ul, {
         prop: "left",
-        value: "0%",
+        value: -100 * n + "%",
         duration: speed,
         callback: () => {
             ul.prepend(ul.lastElementChild)
@@ -184,7 +219,7 @@ function prevSlide() {
             enableClick = true;
         }
     })
-    pagination(0);
+    pagination(n);
 }
 
 
