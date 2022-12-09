@@ -408,8 +408,14 @@ body {
   position: absolute;
   top: -100%;
   right: -50%;
-  transform: rotate(-40deg);
+  transform: rotate(-100deg);
+  transition: 1s;
+  opacity: 0;
   z-index: -1;
+}
+#introduce.on .bgWatch {
+  transform: rotate(-40deg);
+  opacity: 1;
 }
 
 /* Magazine */
@@ -436,18 +442,21 @@ body {
   border: 5px solid #000dbf;
   text-align: left;
   padding-top: 200px;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 0.5s;
 }
-#magazine .inner .boxWrap .lineBox h1 {
+#magazine .inner .boxWrap .lineBox .content h1 {
   font-size: 50px;
   margin-left: 8vw;
   margin-bottom: 40px;
 }
-#magazine .inner .boxWrap .lineBox p {
+#magazine .inner .boxWrap .lineBox .content p {
   width: 580px;
   margin-left: 8vw;
   margin-bottom: 80px;
 }
-#magazine .inner .boxWrap .lineBox .btnMore {
+#magazine .inner .boxWrap .lineBox .content .btnMore {
   display: block;
   width: 170px;
   padding: 20px;
@@ -459,7 +468,7 @@ body {
   transition: 0.4s;
   margin-left: 8vw;
 }
-#magazine .inner .boxWrap .lineBox .btnMore:hover {
+#magazine .inner .boxWrap .lineBox .content .btnMore:hover {
   background-color: #040000;
 }
 #magazine #sliderSub {
@@ -530,6 +539,10 @@ body {
 #magazine #sliderSub .pic img.on {
   opacity: 1;
 }
+#magazine.on .inner .boxWrap .lineBox {
+  transform: translateX(0);
+  opacity: 1;
+}
 
 #skill {
   width: 100%;
@@ -565,6 +578,10 @@ body {
   width: 380px;
   position: relative;
   margin-right: 20px;
+  transform: translateX(100px);
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 1s;
 }
 #skill .inner .wrap article i {
   color: #000dbf;
@@ -597,6 +614,28 @@ body {
 #skill .inner .wrap article:hover h2::after {
   width: 100%;
   background: #000dbf;
+}
+#skill.on .inner .wrap article {
+  transform: translateX(0px);
+  opacity: 1;
+}
+#skill.on .inner .wrap article::nth-of-type(1) {
+  transition-delay: 0s;
+}
+#skill.on .inner .wrap article::nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+#skill.on .inner .wrap article::nth-of-type(3) {
+  transition-delay: 0.4s;
+}
+#skill.on .inner .wrap article::nth-of-type(4) {
+  transition-delay: 0.6s;
+}
+#skill.on .inner .wrap article::nth-of-type(5) {
+  transition-delay: 0.8s;
+}
+#skill.on .inner .wrap article::nth-of-type(6) {
+  transition-delay: 1s;
 }
 
 #collection {
@@ -697,6 +736,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Montserrat", sans-serif;
+  margin-left: 10px;
   letter-spacing: 0;
   font-size: 40px;
   color: #000dbf;
@@ -868,10 +908,9 @@ body {
   width: 100%;
   height: 780px;
   padding: 110px 0px;
+  position: relative;
   background-color: #f6f6f6;
-  background-image: url(../img/headphone1.png);
-  background-repeat: no-repeat;
-  background-position: 20%;
+  overflow: hidden;
 }
 #concept .inner {
   width: 1180px;
@@ -879,6 +918,7 @@ body {
   position: relative;
   align-items: center;
   text-align: right;
+  z-index: 10;
 }
 #concept .inner h1 {
   font-size: 30px;
@@ -895,7 +935,6 @@ body {
   width: 580px;
   position: absolute;
   right: 0px;
-  z-index: 10;
 }
 #concept .inner .wrap article {
   float: right;
@@ -935,6 +974,11 @@ body {
 }
 #concept .inner .wrap article:hover h2::after {
   width: 280px;
+}
+#concept .bgPhone {
+  position: absolute;
+  top: -20%;
+  left: 8%;
 }
 
 #banner {

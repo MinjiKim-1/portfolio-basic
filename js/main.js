@@ -30,7 +30,11 @@ const imgSub = sliderSub.querySelectorAll(".pic img");
 const imgLen = imgSub.length - 1;
 let i = 0;
 
-
+/* scroll - 변수선언 */
+const sections = document.querySelectorAll("section");
+const scrView = document.querySelector("h1");
+const bgPhone = document.querySelector("#concept .bgPhone")
+const base = -300;
 
 
 /* subTab */
@@ -74,8 +78,6 @@ btnPrev.addEventListener("click", (e) => {
 })
 
 
-
-
 paging.forEach((el, index) => {
     el.addEventListener("click", (e) => {
         e.preventDefault();
@@ -87,9 +89,6 @@ paging.forEach((el, index) => {
         activation(paging, index);
     });
 });
-
-
-
 
 
 // paging.forEach((el, index) => {
@@ -121,9 +120,6 @@ paging.forEach((el, index) => {
 //         el.classList.add("on");
 //     })
 // })
-
-
-
 
 
 /* lineBox */
@@ -179,6 +175,48 @@ btnBox.addEventListener("click", (e) => {
         i++;
     }
     activation(imgSub, i);
+})
+
+
+
+/* scroll */
+
+let posArr = [];
+
+console.log(sections);
+const posBox1 = sections[0].offsetTop;
+const posBox2 = sections[1].offsetTop;
+const posBox3 = sections[2].offsetTop;
+const posBox4 = sections[3].offsetTop;
+const posBox5 = sections[4].offsetTop;
+const posBox6 = sections[5].offsetTop;
+const posBox7 = sections[6].offsetTop;
+const posBox8 = sections[7].offsetTop;
+
+
+for (let el of sections) {
+    posArr.push(el.offsetTop);
+}
+console.log(posArr);
+
+
+window.addEventListener("scroll", () => {
+    let scroll = window.scrollY || window.pageYOffset;
+
+    // scrView.innerText = scroll;
+
+    sections.forEach((el, index) => {
+
+        if (scroll >= posArr[index] + base) {
+            lis.forEach((el, index) => {
+                el.classList.remove("on");
+                sections[index].classList.remove("on");
+            })
+
+            lis[index].classList.add("on");
+            sections[index].classList.add("on");
+        }
+    })
 })
 
 

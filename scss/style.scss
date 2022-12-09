@@ -390,8 +390,16 @@ body {
 			position: absolute;
 			top: -100%;
 			right: -50%;
-			transform: rotate(-40deg);
+			transform: rotate(-100deg);
+			transition: 1s;
+			opacity: 0;
 			z-index: -1;
+		}
+	}
+	&.on {
+		.bgWatch {
+			transform: rotate(-40deg);
+			opacity: 1;
 		}
 	}
 }
@@ -416,19 +424,56 @@ body {
 				border: 5px solid $pointColor;
 				text-align: left;
 				padding-top: 200px;
-				h1 {
-					font-size: 50px;
-					margin-left: 8vw;
-					margin-bottom: 40px;
-				}
-				p {
-					width: 580px;
-					margin-left: 8vw;
-					margin-bottom: 80px;
-				}
-				.btnMore {
-					@include btnStyle;
-					margin-left: 8vw;
+				transform: translateX(-100px);
+				opacity: 0;
+				transition: 0.5s;
+				// .top {
+				// 	width: 0%;
+				// 	height: 5px;
+				// 	background: $pointColor;
+				// 	position: absolute;
+				// 	top: 0px;
+				// 	left: 0px;
+				// }
+				// .right {
+				// 	width: 5px;
+				// 	height: 0%;
+				// 	background: $pointColor;
+				// 	position: absolute;
+				// 	bottom: 0px;
+				// 	right: 0px;
+				// }
+				// .bottom {
+				// 	width: 0%;
+				// 	height: 5px;
+				// 	background: $pointColor;
+				// 	position: absolute;
+				// 	bottom: 0px;
+				// 	right: 0px;
+				// }
+				// .left {
+				// 	width: 5px;
+				// 	height: 0%;
+				// 	background: $pointColor;
+				// 	position: absolute;
+				// 	top: 0px;
+				// 	left: 0px;
+				// }
+				.content {
+					h1 {
+						font-size: 50px;
+						margin-left: 8vw;
+						margin-bottom: 40px;
+					}
+					p {
+						width: 580px;
+						margin-left: 8vw;
+						margin-bottom: 80px;
+					}
+					.btnMore {
+						@include btnStyle;
+						margin-left: 8vw;
+					}
 				}
 			}
 		}
@@ -503,6 +548,12 @@ body {
 			}
 		}
 	}
+	&.on {
+		.inner .boxWrap .lineBox {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
 }
 #skill {
 	width: 100%;
@@ -535,6 +586,10 @@ body {
 				width: 380px;
 				position: relative;
 				margin-right: 20px;
+				transform: translateX(100px);
+				opacity: 0;
+				transition-property: all;
+				transition-duration: 1s;
 				i {
 					color: $pointColor;
 					font-size: 30px;
@@ -568,6 +623,41 @@ body {
 						width: 100%;
 						background: $pointColor;
 					}
+				}
+			}
+		}
+	}
+	&.on {
+		.inner {
+			.wrap {
+				article {
+					transform: translateX(0px);
+					opacity: 1;
+					&::nth-of-type(1) {
+						transition-delay: 0s;
+					}
+					&::nth-of-type(2) {
+						transition-delay: 0.2s;
+					}
+					&::nth-of-type(3) {
+						transition-delay: 0.4s;
+					}
+					&::nth-of-type(4) {
+						transition-delay: 0.6s;
+					}
+					&::nth-of-type(5) {
+						transition-delay: 0.8s;
+					}
+					&::nth-of-type(6) {
+						transition-delay: 1s;
+					}
+
+					// 	// @for $i from 1 to 6 {
+					// 	// 	&:nth-of-type(#{$i}) {
+					// 	// 		transition-delay: calc(0.1 * #{$i}) + "s";
+					// 	// 	}
+					// 	// }
+					// }
 				}
 			}
 		}
@@ -606,6 +696,7 @@ body {
 					left: 50%;
 					transform: translate(-50%, -50%);
 					font-family: "Montserrat", sans-serif;
+					margin-left: 10px;
 					letter-spacing: 0;
 					font-size: 40px;
 					color: $pointColor;
@@ -776,7 +867,9 @@ body {
 		height: 100%;
 		margin: 0 auto;
 		position: relative;
-
+		// transform: translateY(100%);
+		// opacity: 0;
+		// transition: 0.5s;
 		p {
 			font-size: 15px;
 			text-align: center;
@@ -796,21 +889,25 @@ body {
 			}
 		}
 	}
+	// &.on {
+	// 	transform: translateY(0);
+	// 	opacity: 1;
+	// }
 }
 #concept {
 	width: 100%;
 	height: 780px;
 	padding: 110px 0px;
+	position: relative;
 	background-color: #f6f6f6;
-	background-image: url(../img/headphone1.png);
-	background-repeat: no-repeat;
-	background-position: 20%;
+	overflow: hidden;
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
 		position: relative;
 		align-items: center;
 		text-align: right;
+		z-index: 10;
 		h1 {
 			font-size: 30px;
 			color: $pointColor;
@@ -826,7 +923,6 @@ body {
 			width: 580px;
 			position: absolute;
 			right: 0px;
-			z-index: 10;
 			article {
 				float: right;
 				width: 280px;
@@ -872,6 +968,20 @@ body {
 			}
 		}
 	}
+	.bgPhone {
+		position: absolute;
+		top: -20%;
+		left: 8%;
+		// transform: translateX(0);
+		// opacity: 0;
+		// transition: 1s;
+	}
+	// &.on {
+	// 	.bgPhone {
+	// 		opacity: 1;
+	// 		transform: translateX(-100px);
+	// 	}
+	// }
 }
 #banner {
 	width: 100%;
