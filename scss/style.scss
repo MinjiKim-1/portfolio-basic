@@ -20,6 +20,21 @@ body {
 	overflow-x: hidden;
 }
 
+@mixin btnStyle {
+	display: block;
+	width: 170px;
+	padding: 20px;
+	font: normal 12px/1 "Montserrat";
+	color: #fff;
+	border-radius: 5px;
+	background-color: $pointColor;
+	text-align: center;
+	transition: 0.4s;
+	&:hover {
+		background-color: $contentColor;
+	}
+}
+
 /* Header */
 #header {
 	width: 100%;
@@ -55,6 +70,7 @@ body {
 					display: flex;
 					justify-content: center;
 					align-items: center;
+					transition: 0.4s;
 				}
 				&:hover {
 					a {
@@ -88,37 +104,65 @@ body {
 			z-index: 10;
 			.lineBox {
 				width: 100%;
-				border: 5px solid $pointColor;
 				padding: 50px;
 				margin-bottom: 20px;
 				text-align: right;
 				justify-content: right;
-				h1 {
-					font-size: 25px;
-					margin-bottom: 20px;
+				position: relative;
+				.top {
+					width: 0%;
+					height: 5px;
+					background: $pointColor;
+					position: absolute;
+					top: 0px;
+					left: 0px;
 				}
-				h2 {
-					font: bold 50px/1 "Montserrat";
-					color: $pointColor;
-					margin-bottom: 20px;
+				.right {
+					width: 5px;
+					height: 0%;
+					background: $pointColor;
+					position: absolute;
+					top: 0px;
+					right: 0px;
 				}
-				p {
-					font: bold 20px/1 "Montserrat";
-					color: $pointColor;
-					margin-bottom: 5px;
+				.bottom {
+					width: 0%;
+					height: 5px;
+					background: $pointColor;
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+				}
+				.left {
+					width: 5px;
+					height: 0%;
+					background: $pointColor;
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+				}
+				.content {
+					opacity: 0;
+					h1 {
+						font-size: 25px;
+						margin-bottom: 20px;
+					}
+					h2 {
+						font: bold 50px/1 "Montserrat";
+						color: $pointColor;
+						margin-bottom: 20px;
+					}
+					p {
+						font: bold 20px/1 "Montserrat";
+						color: $pointColor;
+						margin-bottom: 5px;
+					}
 				}
 			}
 			.btnMore {
 				float: right;
 				right: 0px;
-				width: 170px;
-				display: block;
-				padding: 20px;
-				font: normal 12px/1 "Montserrat";
-				color: #fff;
-				border-radius: 5px;
-				background: $pointColor;
-				text-align: center;
+				@include btnStyle;
 			}
 		}
 	}
@@ -263,9 +307,9 @@ body {
 		margin: 0 auto;
 		position: relative;
 		display: flex;
+		justify-content: left;
 		align-items: center;
-		.subTab {
-			float: left;
+		#subTab {
 			margin-right: 140px;
 			li {
 				width: 170px;
@@ -275,6 +319,10 @@ body {
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				cursor: pointer;
+				transform: scale(1);
+				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0);
+				transition: 0.4s;
 				a {
 					display: block;
 					color: $pointColor;
@@ -288,6 +336,12 @@ body {
 						display: block;
 					}
 				}
+				&:hover {
+					transform: scale(1.05);
+					box-shadow: 10px 10px 10px
+						rgba(0, 0, 0, 0.2);
+					z-index: 5;
+				}
 				&.on {
 					background: $pointColor;
 					i {
@@ -300,8 +354,11 @@ body {
 			}
 		}
 		article {
-			float: left;
 			width: 500px;
+			display: none;
+			&.on {
+				display: block;
+			}
 			h1 {
 				font-size: 50px;
 				margin-bottom: 40px;
@@ -325,6 +382,9 @@ body {
 					}
 				}
 			}
+			.btnMore {
+				@include btnStyle;
+			}
 		}
 		.bgWatch {
 			position: absolute;
@@ -344,68 +404,103 @@ body {
 		margin: 0 auto;
 		position: relative;
 		.boxWrap {
-			width: 900px;
-			height: 760px;
+			width: 1000px;
+			height: 700px;
 			position: absolute;
-			left: 0;
-			top: 65px;
+			top: 100px;
+			left: -8vw;
 			z-index: 10;
 			.lineBox {
 				width: 100%;
 				height: 100%;
 				border: 5px solid $pointColor;
-				padding: 200px 50px 50px;
 				text-align: left;
+				padding-top: 200px;
 				h1 {
 					font-size: 50px;
+					margin-left: 8vw;
 					margin-bottom: 40px;
 				}
 				p {
-					width: 600px;
-					margin-bottom: 100px;
+					width: 580px;
+					margin-left: 8vw;
+					margin-bottom: 80px;
 				}
 				.btnMore {
-					width: 170px;
-					display: block;
-					padding: 20px;
-					font: normal 12px/1 "Montserrat";
-					color: #fff;
-					border-radius: 5px;
-					background: $pointColor;
-					text-align: center;
+					@include btnStyle;
+					margin-left: 8vw;
 				}
 			}
 		}
 	}
-	.pic {
-		position: absolute;
-		right: 0;
-		width: 50%;
-		height: 890px;
-		background: #d5d5d5;
-		.btnNext {
-			display: block;
+	#sliderSub {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		.btnBox {
 			width: 170px;
 			height: 170px;
 			position: absolute;
-			top: 300px;
+			top: 50%;
 			right: 0;
-			transform: translateY(50%);
-			font-size: 15px;
-			color: #fff;
+			transform: translateY(-50%);
 			text-align: center;
 			background: $pointColor;
 			padding-top: 65px;
-			float: right;
-			span {
-				display: block;
-				font: normal 12px/1 "Montserrat";
+			z-index: 10;
+			cursor: pointer;
+			opacity: 0.8;
+			transition: 0.3s;
+			.btnNext {
+				transform: translateY(50%);
+				font-size: 15px;
+				color: #fff;
+				&::after {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-17px);
+					margin-top: 5px;
+					display: block;
+					content: "";
+					width: 0%;
+					height: 2px;
+					background: #fff;
+					transition: 0.3s;
+				}
+				span {
+					display: block;
+					font: normal 12px/1 "Montserrat";
+				}
+			}
+			&:hover {
+				opacity: 1;
+				.btnNext {
+					&::after {
+						width: 20%;
+					}
+				}
 			}
 		}
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
+		.pic {
+			width: 48%;
+			height: 890px;
+			position: absolute;
+			background: #d5d5d5;
+			right: 0;
+			img {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				opacity: 0;
+				transition: 1s;
+				filter: grayscale(0.5) brightness(1.2);
+				&.on {
+					opacity: 1;
+				}
+			}
 		}
 	}
 }
@@ -446,7 +541,16 @@ body {
 				}
 				h2 {
 					font-size: 15px;
-					margin-bottom: 30px;
+					margin-bottom: 20px;
+					&::after {
+						margin-top: 10px;
+						display: block;
+						content: "";
+						width: 0%;
+						height: 2px;
+						background: #fff;
+						transition: 0.3s;
+					}
 				}
 				p {
 					font-size: 12px;
@@ -455,6 +559,12 @@ body {
 				&:nth-of-type(3n) {
 					margin-right: 0px;
 					margin-bottom: 100px;
+				}
+				&:hover h2 {
+					&::after {
+						width: 100%;
+						background: $pointColor;
+					}
 				}
 			}
 		}
@@ -471,70 +581,125 @@ body {
 			width: calc(100% / 5.5);
 			height: 350px;
 			float: left;
-			&:nth-of-type(1) {
-				background: url(../img/img1.jpg) no-repeat
-					bottom/cover;
+			overflow: hidden;
+			transition: 0.4s;
+			@for $i from 1 to 12 {
+				&:nth-of-type(#{$i}) {
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						filter: grayscale(0.5);
+						transition: 1s;
+					}
+				}
 			}
 			&:nth-of-type(2) {
-				background: url(../img/img2.png) no-repeat
-					center/cover #f5f5f5;
+				background: #f5f5f5;
 			}
 			&:nth-of-type(3) {
 				width: calc((100% / 5.5) * 2.5);
-				background: $pointColor;
-				padding: 50px;
-				i {
-					font-size: 30px;
-					color: #fff;
-					margin-bottom: 10px;
+				background: linear-gradient(
+					135deg,
+					$pointColor,
+					rgb(44, 50, 105)
+				);
+				position: relative;
+				cursor: pointer;
+				z-index: 5;
+				&:hover {
+					transform: scale(1.05);
+					box-shadow: 10px 10px 10px
+						rgba(0, 0, 0, 0.2);
 				}
-				h1 {
-					font-size: 15px;
-					color: #fff;
-					margin-bottom: 30px;
-				}
-				p {
-					font-size: 12px;
-					color: #fff;
+				article {
+					position: absolute;
+					left: 50px;
+					bottom: 50px;
+					// i {
+					// 	font-size: 30px;
+					// 	color: #fff;
+					// 	margin-bottom: 10px;
+					// }
+					.btnPlus {
+						display: block;
+						width: 30px;
+						height: 30px;
+						// background: red;
+						position: absolute;
+						top: -40px;
+						transition: 0.3s 0s,
+							transform 0.3s 0.5s;
+						&::before {
+							content: "";
+							display: block;
+							width: 30px;
+							height: 2px;
+							background: #fff;
+							position: absolute;
+							bottom: 15px;
+							left: 0;
+							transition: 0.3s 0s,
+								transform 0.3s 0.5s;
+						}
+						&::after {
+							content: "";
+							display: block;
+							width: 30px;
+							height: 2px;
+							background: #fff;
+							position: absolute;
+							bottom: 15px;
+							left: 0;
+							transition: 0.3s 0s,
+								transform 0.3s 0.5s;
+						}
+					}
+
+					h1 {
+						font-size: 25px;
+						color: #fff;
+						margin-bottom: 30px;
+					}
+					p {
+						font-size: 12px;
+						color: #fff;
+					}
 				}
 			}
 			&:nth-of-type(4) {
 				height: 700px;
 				float: right;
-				background: url(../img/img4.png) no-repeat
-					center/cover;
 			}
 			&:nth-of-type(5) {
 				width: calc((100% / 5.5) * 2.5);
 				float: left;
-				background: url(../img/img5.png) no-repeat
-					center/cover rgb(241, 244, 255);
-			}
-			&:nth-of-type(6) {
-				background: url(../img/img6.png) no-repeat
-					center/cover;
-			}
-			&:nth-of-type(7) {
-				background: url(../img/img7.png) no-repeat
-					center/cover;
-			}
-			&:nth-of-type(8) {
-				background: url(../img/img8.png) no-repeat
-					center/cover;
-			}
-			&:nth-of-type(9) {
-				background: url(../img/img9.jpg) no-repeat
-					center/cover;
-			}
-			&:nth-of-type(10) {
-				background: url(../img/img10.jpg) no-repeat
-					center/cover;
+				background: linear-gradient(
+					45deg,
+					rgb(215, 225, 240),
+					#eee
+				);
 			}
 			&:nth-of-type(11) {
 				width: calc((100% / 5.5) * 2.5);
 				float: right;
-				background: url(../img/img11.jpg) no-repeat
-					bottom center/cover;
+				position: relative;
+			}
+			&:hover img {
+				filter: grayscale(0);
+				transform: scale(1.1);
+			}
+			&:hover article .btnPlus {
+				transform: rotate(-180deg);
+				top: -60px;
+				&::before {
+					// bottom: 30px;
+					transform: rotate(-90deg);
+				}
+				&::after {
+					// bottom: 30px;
+					transform: rotate(0deg);
+				}
 			}
 		}
 		&::after {
@@ -580,7 +745,7 @@ body {
 	background-color: #f6f6f6;
 	background-image: url(../img/headphone1.png);
 	background-repeat: no-repeat;
-	background-position: center left;
+	background-position: 20%;
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
@@ -590,13 +755,14 @@ body {
 		h1 {
 			font-size: 30px;
 			color: $pointColor;
-			margin-bottom: 60px;
+			margin-bottom: 50px;
 		}
 		p {
 			font-size: 12px;
-			font-family: "Open Sans", sans-serif;
+			font-family: "Montserrat", sans-serif;
+			// font-family: "Open Sans", sans-serif;
 			line-height: 1.6;
-			margin-bottom: 50px;
+			margin-bottom: 100px;
 		}
 		.wrap {
 			width: 580px;
@@ -604,27 +770,43 @@ body {
 			right: 0px;
 			z-index: 10;
 			article {
-				float: left;
+				float: right;
 				width: 280px;
-				margin-left: 20px;
+				margin-right: 20px;
 				&:nth-of-type(1),
 				&:nth-of-type(3) {
-					margin-left: 0px;
+					margin-right: 0px;
 				}
 				h2 {
 					font-size: 16px;
 					margin-bottom: 20px;
 				}
-				a {
-					display: block;
-					i {
-						color: $pointColor;
-						font-size: 30px;
-						margin-bottom: 10px;
+				p {
+					font-family: "Open Sans", sans-serif;
+				}
+				i {
+					color: $pointColor;
+					font-size: 30px;
+					margin-bottom: 10px;
+				}
+				h2 {
+					font-size: 15px;
+					margin-bottom: 20px;
+					&::after {
+						margin-top: 10px;
+						float: right;
+						display: block;
+						content: "";
+						width: 0%;
+						height: 2px;
+						background: #fff;
+						transition: 0.3s;
 					}
-					h2 {
-						font-size: 15px;
-						margin-bottom: 30px;
+				}
+				&:hover h2 {
+					&::after {
+						width: 100%;
+						background: $pointColor;
 					}
 				}
 			}
@@ -662,14 +844,115 @@ body {
 		.btnMore {
 			float: right;
 			right: 0px;
-			width: 170px;
-			display: block;
-			padding: 20px;
-			font: normal 12px/1 "Montserrat";
+			@include btnStyle;
 			color: $pointColor;
-			border-radius: 5px;
-			background: #fff;
+			background-color: #fff;
+			&:hover {
+				background-color: #bac5ff;
+			}
+		}
+	}
+}
+#record {
+	width: 100%;
+	padding: 50px 0;
+	position: relative;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		article {
+			width: 280px;
+			padding: 50px;
 			text-align: center;
+			strong {
+				font-size: 40px;
+				font-family: "Montserrat", sans-serif;
+				color: $pointColor;
+			}
+			p {
+				font-family: "Montserrat", sans-serif;
+			}
+		}
+	}
+}
+#footer {
+	width: 100%;
+	background: #000;
+	padding-top: 50px;
+	position: relative;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		h1 {
+			font-size: 20px;
+			letter-spacing: 10px;
+			color: #fff;
+			text-align: center;
+			margin-bottom: 50px;
+			margin-left: 10px;
+		}
+		address {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			font-style: normal;
+			margin-bottom: 100px;
+			article {
+				width: 380px;
+				text-align: center;
+				h2 {
+					font-size: 12px;
+					color: rgb(85, 125, 227);
+					margin-bottom: 20px;
+				}
+				p {
+					font-size: 10px;
+					color: #bbb;
+					line-height: 20px;
+				}
+			}
+		}
+		.bottom {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			a {
+				display: block;
+				width: 240px;
+				height: 80px;
+				font: normal 12px/80px "Montserrat";
+				text-align: center;
+				color: #fff;
+				display: block;
+				background: $pointColor;
+			}
+			p {
+				color: #bbb;
+				font-size: 10px;
+			}
+			.snsLink {
+				width: 240px;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				li {
+					margin-right: 15px;
+					i {
+						font-size: 15px;
+						color: #fff;
+						opacity: 0.4;
+						transition: 0.5s;
+					}
+					&:hover i {
+						opacity: 1;
+					}
+				}
+			}
 		}
 	}
 }

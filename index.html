@@ -38,9 +38,15 @@
         <div class="inner">
             <div class="boxWrap">
                 <div class="lineBox">
-                    <h1>BASIC</h1>
-                    <h2>MINIMALISTIC DESIGN</h2>
-                    <p>innovative concept</p>
+                    <div class="top"></div>
+                    <div class="right"></div>
+                    <div class="bottom"></div>
+                    <div class="left"></div>
+                    <div class="content">
+                        <h1>BASIC</h1>
+                        <h2>MINIMALISTIC DESIGN</h2>
+                        <p>innovative concept</p>
+                    </div>
                 </div>
                 <a href="#" class="btnMore">READ MORE</a>
             </div>
@@ -85,7 +91,7 @@
     <!-- Section Introduce -->
     <section id="introduce">
         <div class="inner">
-            <ul class="subTab">
+            <ul id="subTab">
                 <li class="on">
                     <a href="">
                         <i class="fas fa-shopping-bag"></i>
@@ -105,7 +111,7 @@
                     </a>
                 </li>
             </ul>
-            <article>
+            <article class="on">
                 <h1>New? Why Not?</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, placeat delectus obcaecati labore
@@ -116,6 +122,29 @@
                     <li>Lorem ipsum dolor sit amet consectetur.</li>
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                </ul>
+            </article>
+            <article>
+                <h1>Connection</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eveniet sit consectetur culpa
+                    perferendis non nulla recusandae soluta illum fuga, facere maiores officiis adipisci fugit rerum
+                    nostrum maxime, nemo itaque?
+                </p>
+                <a href="#" class="btnMore">CONTACT</a>
+
+            </article>
+            <article>
+                <h1>Brilliant Idea!</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores consequatur a rem quis atque animi,
+                    rerum veritatis dignissimos magni, nisi pariatur accusamus ex ad provident vitae sed, obcaecati
+                    earum iusto.
+                </p>
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+
                 </ul>
             </article>
             <div class="bgWatch">
@@ -137,12 +166,18 @@
                 </div>
             </div>
         </div>
-        <div class="pic">
-            <a href="#" class="btnNext">
-                <i class="fas fa-long-arrow-alt-right"></i>
-                <span>NEXT</span>
-            </a>
-            <img src="img/magazine.png" alt="">
+        <div id="sliderSub">
+            <div class="btnBox">
+                <a href="#" class="btnNext">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                    <span>NEXT</span>
+                </a>
+            </div>
+            <div class="pic">
+                <img src="img/magazine1.png" class="on" alt="Breville Magazine">
+                <img src="img/magazine2.jpg" alt="Audi Magazine">
+                <img src="img/magazine3.jpg" alt="MontBlanc Magazine">
+            </div>
         </div>
     </section>
     <!-- Section Skill -->
@@ -204,21 +239,26 @@
     <!-- Section Collection -->
     <section id="collection">
         <div class="inner">
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
+            <div><img src="../img/img1.jpg" alt=""></div>
+            <div><img src="../img/img2.png" alt=""></div>
             <div>
-                <i class="fal fa-plus"></i>
-                <h1>Minimalistic Project</h1>
-                <p>Corporate Branding</p>
+                <article>
+                    <!-- <i class="fal fa-plus"></i> -->
+                    <a href="#" class="btnPlus">
+                        <span class="hidden">More</span>
+                    </a>
+                    <h1>Minimalistic Project</h1>
+                    <p>Corporate Branding</p>
+                </article>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div><img src="../img/img4.png" alt=""></div>
+            <div><img src="../img/img5.png" alt=""></div>
+            <div><img src="../img/img6.jpg" alt=""></div>
+            <div><img src="../img/img7.png" alt=""></div>
+            <div><img src="../img/img8.png" alt=""></div>
+            <div><img src="../img/img9.jpg" alt=""></div>
+            <div><img src="../img/img10.png" alt=""></div>
+            <div><img src="../img/img11.jpg" alt=""></div>
         </div>
     </section>
     <!-- Section Quote -->
@@ -241,33 +281,26 @@
                 doloremque dignissimos <br>provident nihil velit dolorum cum corporis.</p>
             <div class="wrap">
                 <article>
-                    <a href="#">
-                        <i class="fas fa-flag"></i>
-                    </a>
+                    <i class="fas fa-flag"></i>
                     <h2>PLANNING</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos reiciendis incidunt expedita.
                     </p>
                 </article>
                 <article>
-                    <a href="#">
-                        <i class="fas fa-marker"></i>
-                    </a>
+                    <i class="fas fa-marker"></i>
                     <h2>DATA ANALYSIS</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos reiciendis incidunt expedita.
                     </p>
                 </article>
                 <article>
-                    <a href="#">
-                        <i class="fas fa-chart-pie"></i>
-                    </a>
+                    <i class="fas fa-chart-pie"></i>
                     <h2>MARKETING</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos reiciendis incidunt expedita.
                     </p>
                 </article>
                 <article>
-                    <a href="#">
-                        <i class="fas fa-folder-open"></i>
-                    </a>
+                    <i class="fas fa-folder-open"></i>
+
                     <h2>WELL DOCUMENTED</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos reiciendis incidunt expedita.
                     </p>
@@ -283,46 +316,44 @@
             <a href="#" class="btnMore">READ MORE</a>
         </div>
     </section>
-    <!-- Section Concept -->
+    <!-- Section record -->
     <section id="record">
         <div class="inner">
             <article>
                 <strong>348</strong>
-                <span>Happy Clients</span>
+                <p>Happy Clients</p>
             </article>
             <article>
                 <strong>+12K</strong>
-                <span>FB Fans</span>
+                <p>FB Fans</p>
             </article>
             <article>
                 <strong>618</strong>
-                <span>Cups of Coffees</span>
+                <p>Cups of Coffees</p>
             </article>
             <article>
                 <strong>1192</strong>
-                <span>Projects</span>
+                <p>Projects</p>
             </article>
         </div>
     </section>
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <div class="inner">
             <H1>BASIC</H1>
             <address>
-                <ul>
-                    <li>
-                        <span>ADDRESS</span>
-                        <span>1713 Hide A Way Road <br> San Jose, CA95118</span>
-                    </li>
-                    <li>
-                        <span>PHONE & FAX</span>
-                        <span>+123-456-7890 <br> +123-456-7890</span>
-                    </li>
-                    <li>
-                        <span>E-MAIL</span>
-                        <span>supports@portfolio.com <br> office@portfolio.com</span>
-                    </li>
-                </ul>
+                <article>
+                    <h2>ADDRESS</h2>
+                    <p>1713 Hide A Way Road <br> San Jose, CA95118</p>
+                </article>
+                <article>
+                    <h2>PHONE & FAX</h2>
+                    <p>+123-456-7890 <br> +123-456-7890</p>
+                </article>
+                <article>
+                    <h2>E-MAIL</h2>
+                    <p>supports@portfolio.com <br> office@portfolio.com</p>
+                </article>
             </address>
             <div class="bottom">
                 <a href="#">SUBSCRIBE</a>
