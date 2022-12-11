@@ -36,6 +36,14 @@ const scrView = document.querySelector("h1");
 const bgPhone = document.querySelector("#concept .bgPhone")
 const base = -300;
 
+/* Media Query - 변수선언 */
+const btnCall = document.querySelector(".btnCall");
+const menuMo = document.querySelector(".menuMo");
+
+
+
+
+
 
 /* subTab */
 subTab.forEach((el, index) => {
@@ -218,6 +226,17 @@ window.addEventListener("scroll", () => {
         }
     })
 })
+
+
+
+/* Media Query */
+btnCall.onclick = function (e) {
+    e.preventDefault();
+
+    btnCall.classList.toggle("on");
+    menuMo.classList.toggle("on");
+}
+
 
 
 /* 함수 패키징 */
