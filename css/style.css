@@ -35,7 +35,6 @@ a {
 }
 #members .inner {
   width: 1180px;
-  height: 800px;
   margin: 0 auto;
   position: relative;
 }
@@ -116,14 +115,13 @@ a {
 }
 #members .inner article p {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   letter-spacing: -0.5px;
   color: #000dbf;
 }
 
 #role {
   width: 100%;
-  position: relative;
 }
 #role #sliderText {
   width: 100%;
@@ -132,7 +130,7 @@ a {
   width: 170px;
   height: 170px;
   position: absolute;
-  top: 150px;
+  top: 700px;
   right: 0;
   text-align: center;
   background: #000dbf;
@@ -172,10 +170,8 @@ a {
 }
 #role #sliderText .inner {
   width: 300%;
-  height: 100%;
   float: left;
   position: relative;
-  margin: 0 auto;
 }
 #role #sliderText .inner article {
   width: 33.3333333333%;
@@ -184,8 +180,12 @@ a {
 }
 #role #sliderText .inner article .wrap {
   width: 1180px;
+  height: 400px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #role #sliderText .inner article .wrap .content {
   padding: 50px 0px;
@@ -203,10 +203,9 @@ a {
   margin-right: 100px;
 }
 #role #sliderText .inner article .wrap .pic {
-  float: right;
+  position: absolute;
+  right: 0;
   width: 400px;
-  margin-right: 5vw;
-  background: red;
 }
 #role #sliderText .inner article .wrap .pic img {
   width: 100%;
@@ -218,6 +217,12 @@ a {
 }
 #role #sliderText .inner article:nth-of-type(2) {
   background: #f6edf7;
+}
+#role #sliderText .inner article:nth-of-type(2) .pic {
+  margin-right: 5vw;
+}
+#role #sliderText .inner article:nth-of-type(2) .pic img {
+  object-fit: cover;
 }
 #role #sliderText .inner article:nth-of-type(3) {
   background: #f7efed;
@@ -231,7 +236,7 @@ a {
 #rules {
   width: 100%;
   padding: 150px 0;
-  background: url(../img/bg2.jpg) no-repeat bottom/cover fixed;
+  background: url(../img/about_bg.jpg) no-repeat bottom/cover fixed;
   position: relative;
 }
 #rules::before {
@@ -247,6 +252,7 @@ a {
 }
 #rules .inner {
   width: 1180px;
+  height: 400px;
   margin: 0 auto;
   position: relative;
 }
@@ -254,6 +260,24 @@ a {
 #rules .inner h3,
 #rules .inner p {
   color: #fff;
+}
+#rules .inner .ruleTitle {
+  margin-bottom: 100px;
+}
+#rules .inner .contents article {
+  width: 380px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#rules .inner .contents article span {
+  margin-right: 10px;
+}
+#rules .inner .contents article h3 {
+  margin-bottom: 20px;
+}
+#rules .inner .contents article:nth-of-type(3n) {
+  margin-right: 0px;
 }
 
 h1,
@@ -1306,7 +1330,7 @@ body {
 #banner {
   width: 100%;
   padding: 150px 0;
-  background: url(../img/bg1.jpg) no-repeat center/cover fixed;
+  background: url(../img/bg.jpg) no-repeat center/cover fixed;
   position: relative;
 }
 #banner::before {

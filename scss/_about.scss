@@ -42,7 +42,6 @@ $mobile: 539px;
 	position: relative;
 	.inner {
 		width: 1180px;
-		height: 800px;
 		margin: 0 auto;
 		position: relative;
 		h1 {
@@ -71,7 +70,6 @@ $mobile: 539px;
 					transition: 0.5s;
 				}
 				.box {
-					// 롤오버 박스
 					width: 260px;
 					height: 260px;
 					background: #000dbf;
@@ -94,7 +92,6 @@ $mobile: 539px;
 					}
 				}
 				&:hover {
-					// 마우스 오버시 나타남
 					img {
 						filter: grayscale(0);
 					}
@@ -112,7 +109,7 @@ $mobile: 539px;
 			}
 			p {
 				text-align: center;
-				margin-bottom: 50px;
+				margin-bottom: 100px;
 				letter-spacing: -0.5px;
 				color: #000dbf;
 			}
@@ -121,15 +118,13 @@ $mobile: 539px;
 }
 #role {
 	width: 100%;
-	position: relative;
-
 	#sliderText {
 		width: 100%;
 		.btnBox {
 			width: 170px;
 			height: 170px;
 			position: absolute;
-			top: 150px;
+			top: 700px;
 			right: 0;
 			// transform: translateY(-50%);
 			text-align: center;
@@ -172,23 +167,20 @@ $mobile: 539px;
 		}
 		.inner {
 			width: calc(100% * 3);
-			height: 100%;
 			float: left;
 			position: relative;
-			margin: 0 auto;
-			// display: flex;
-			// justify-self: self;
 			article {
 				width: calc(100% / 3);
 				position: relative;
 				float: left;
 				.wrap {
 					width: 1180px;
+					height: 400px;
 					margin: 0 auto;
 					position: relative;
-					// display: flex;
-					// justify-content: space-between;
-					// align-items: center;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
 					.content {
 						padding: 50px 0px;
 						float: left;
@@ -206,10 +198,9 @@ $mobile: 539px;
 						}
 					}
 					.pic {
-						float: right;
+						position: absolute;
+						right: 0;
 						width: 400px;
-						margin-right: 5vw;
-						background: red;
 						img {
 							width: 100%;
 							height: 100%;
@@ -222,6 +213,12 @@ $mobile: 539px;
 				}
 				&:nth-of-type(2) {
 					background: #f6edf7;
+					.pic {
+						margin-right: 5vw;
+						img {
+							object-fit: cover;
+						}
+					}
 				}
 				&:nth-of-type(3) {
 					background: #f7efed;
@@ -238,8 +235,8 @@ $mobile: 539px;
 #rules {
 	width: 100%;
 	padding: 150px 0;
-	background: url(../img/bg2.jpg) no-repeat bottom/cover
-		fixed;
+	background: url(../img/about_bg.jpg) no-repeat
+		bottom/cover fixed;
 	position: relative;
 	&::before {
 		content: "";
@@ -254,12 +251,34 @@ $mobile: 539px;
 	}
 	.inner {
 		width: 1180px;
+		height: 400px;
 		margin: 0 auto;
 		position: relative;
+
 		h2,
 		h3,
 		p {
 			color: #fff;
+		}
+		.ruleTitle {
+			margin-bottom: 100px;
+		}
+		.contents {
+			article {
+				width: 380px;
+				float: left;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				span {
+					margin-right: 10px;
+				}
+				h3 {
+					margin-bottom: 20px;
+				}
+				&:nth-of-type(3n) {
+					margin-right: 0px;
+				}
+			}
 		}
 	}
 }

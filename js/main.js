@@ -41,22 +41,23 @@ const btnCall = document.querySelector(".btnCall");
 const menuMo = document.querySelector(".menuMo");
 
 
+// window.onresize = () => {
+//     let bSize = window.innerWidth;
+//     if (window.offsetWidth > 1180) {
+//         btnCall.classList.toggle("off");
+//         menuMo.classList.toggle("off");
+//     }
+// }
 
 
+window.onresize = function () {
+    let bSize = window.innerWidth;
+    if (window.offsetWidth > 1180) {
+        btnCall.classList.toggle("off");
+        menuMo.classList.toggle("off");
+    }
+}
 
-
-/* subTab */
-subTab.forEach((el, index) => {
-    el.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        let isOn = e.currentTarget.classList.contains("on");
-        if (isOn) return;
-
-        activation(subTab, index);
-        activation(subPage, index);
-    })
-})
 
 
 /* sliderMain */
@@ -171,6 +172,23 @@ window.onload = function () {
         }
     })
 }
+
+
+
+
+/* subTab */
+subTab.forEach((el, index) => {
+    el.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let isOn = e.currentTarget.classList.contains("on");
+        if (isOn) return;
+
+        activation(subTab, index);
+        activation(subPage, index);
+    })
+})
+
 
 
 /* slideSub */
