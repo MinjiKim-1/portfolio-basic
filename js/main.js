@@ -41,24 +41,6 @@ const btnCall = document.querySelector(".btnCall");
 const menuMo = document.querySelector(".menuMo");
 
 
-// window.onresize = () => {
-//     let bSize = window.innerWidth;
-//     if (window.offsetWidth > 1180) {
-//         btnCall.classList.toggle("off");
-//         menuMo.classList.toggle("off");
-//     }
-// }
-
-
-window.onresize = function () {
-    let bSize = window.innerWidth;
-    if (window.offsetWidth > 1180) {
-        btnCall.classList.toggle("off");
-        menuMo.classList.toggle("off");
-    }
-}
-
-
 
 /* sliderMain */
 init();
@@ -100,36 +82,6 @@ paging.forEach((el, index) => {
 });
 
 
-// paging.forEach((el, index) => {
-//     el.addEventListener("click", (e) => {
-
-//         // let pageArr = ul.querySelectorAll("li");
-//         // let pageNow = pageArr[index].getAttribute("data-index");
-
-//         // console.log(paging.indexOf("a.on"));
-//         // console.log(paging);
-//         // console.log(pageArr);
-//         // console.log(pageNow);
-//         // console.log(index);
-
-//         // // nextSlide(index);
-//         // // prevSlide(index);
-
-//         for (let el of paging) el.classList.remove("on");
-//         new Anim(ul, {
-//             prop: "left",
-//             value: -100 * (index) + "%",
-//             duration: speed,
-//             callback: () => {
-//                 ul.append(ul.firstElementChild)
-//                 ul.style.left = "-100%";
-//                 enableClick = true;
-//             }
-//         })
-//         el.classList.add("on");
-//     })
-// })
-
 
 /* lineBox */
 window.onload = function () {
@@ -157,13 +109,6 @@ window.onload = function () {
                                 prop: "height",
                                 value: "100%",
                                 duration: speed,
-                                // callback: () => {
-                                //     new Anim(_content, {
-                                //         prop: "opacity",
-                                //         value: 1,
-                                //         duration: speed,
-                                //     })
-                                // }
                             })
                         }
                     })

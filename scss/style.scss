@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "reset.scss";
 @import "about.scss";
+@import "support.scss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap");
 
 // Design Guide
@@ -27,7 +28,7 @@ body {
 	display: block;
 	width: 170px;
 	padding: 20px;
-	font: normal 12px/1 "Montserrat";
+	font: 12px/1 "Montserrat";
 	color: #fff;
 	border-radius: 5px;
 	background-color: $pointColor;
@@ -90,16 +91,18 @@ body {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					transition: 0.4s;
+					transition: 0.2s;
+				}
+				&:nth-of-type(7),
+				&:nth-of-type(8) {
+					a {
+						font-size: 18px;
+					}
 				}
 				&:hover {
 					a {
-						background: #fff;
-					}
-				}
-				&.on {
-					a {
-						color: $pointColor;
+						color: #fff;
+						background: $pointColor;
 					}
 				}
 			}
@@ -209,6 +212,12 @@ body {
 						color: #fff;
 						text-align: center;
 					}
+					&:nth-of-type(7),
+					&:nth-of-type(8) {
+						a {
+							font-size: 18px;
+						}
+					}
 				}
 			}
 		}
@@ -276,12 +285,14 @@ body {
 						margin-bottom: 20px;
 					}
 					h2 {
-						font: bold 50px/1 "Montserrat";
+						font: 50px/1 "Montserrat",
+							sans-serif;
 						color: $pointColor;
 						margin-bottom: 20px;
 					}
 					p {
-						font: bold 20px/1 "Montserrat";
+						font: 20px/1 "Montserrat",
+							sans-serif;
 						color: $pointColor;
 						margin-bottom: 5px;
 					}
@@ -364,7 +375,7 @@ body {
 			text-align: center;
 			span {
 				display: block;
-				font: normal 12px/1 "Montserrat";
+				font: 12px/1 "Montserrat";
 			}
 		}
 		.btnPrev {
@@ -642,7 +653,7 @@ body {
 				}
 				span {
 					display: block;
-					font: normal 12px/1 "Montserrat";
+					font: 12px/1 "Montserrat";
 				}
 			}
 			&:hover {
@@ -1205,8 +1216,7 @@ body {
 				display: block;
 				width: 240px;
 				height: 80px;
-				font: normal 12px/80px "Montserrat",
-					sans-serif;
+				font: 12px/80px "Montserrat", sans-serif;
 				text-align: center;
 				color: #fff;
 				display: block;

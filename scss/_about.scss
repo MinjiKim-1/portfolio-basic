@@ -8,7 +8,7 @@ $mobile: 539px;
 	display: block;
 	width: 170px;
 	padding: 20px;
-	font: normal 12px/1 "Montserrat";
+	font: 12px/1 "Montserrat", sans-serif;
 	color: #fff;
 	border-radius: 5px;
 	background-color: $pointColor;
@@ -36,6 +36,7 @@ $mobile: 539px;
 	}
 }
 
+/* Members */
 #members {
 	width: 100%;
 	padding: 260px 0 100px 0;
@@ -85,7 +86,7 @@ $mobile: 539px;
 					p {
 						width: 100px;
 						margin: 0 auto;
-						margin-top: 50%;
+						margin-top: 45%;
 						text-align: center;
 						transform: translateY(-6px);
 						color: #fff;
@@ -121,67 +122,24 @@ $mobile: 539px;
 		clear: both;
 	}
 }
+/* Role */
 #role {
 	width: 100%;
 	#sliderText {
 		width: 100%;
 		position: relative;
-		// .btnBox {
-		// 	width: 170px;
-		// 	height: 170px;
-		// 	position: absolute;
-		// 	top: 700px;
-		// 	right: 0;
-		// 	// transform: translateY(-50%);
-		// 	text-align: center;
-		// 	background: $pointColor;
-		// 	padding-top: 65px;
-		// 	z-index: 9;
-		// 	cursor: pointer;
-		// 	opacity: 0.8;
-		// 	transition: 0.3s;
-		// 	.btnNext {
-		// 		transform: translateY(50%);
-		// 		font-size: 15px;
-		// 		color: #fff;
-		// 		&::after {
-		// 			position: absolute;
-		// 			left: 50%;
-		// 			transform: translateX(-17px);
-		// 			margin-top: 5px;
-		// 			display: block;
-		// 			content: "";
-		// 			width: 0%;
-		// 			height: 2px;
-		// 			background: #fff;
-		// 			transition: 0.3s;
-		// 			z-index: 10;
-		// 		}
-		// 		span {
-		// 			display: block;
-		// 			font: normal 12px/1 "Montserrat";
-		// 		}
-		// 	}
-		// 	&:hover {
-		// 		opacity: 1;
-		// 		.btnNext {
-		// 			&::after {
-		// 				width: 20%;
-		// 			}
-		// 		}
-		// 	}
-		// }
-		.btns {
+		.btnBox {
 			position: absolute;
-			top: -85px;
+			top: -55px;
 			left: 50%;
 			transform: translateX(-50%);
-			z-index: 9;
+			z-index: 3;
 			li {
 				width: 170px;
-				height: 170px;
+				height: 100px;
 				float: left;
 				margin: 5px;
+				background: #fff;
 				background: #f2f3f8;
 				cursor: pointer;
 				transform: scale(1);
@@ -191,7 +149,7 @@ $mobile: 539px;
 					display: block;
 					font-family: "Montserrat", sans-serif;
 					color: $pointColor;
-					line-height: 170px;
+					line-height: 100px;
 					text-align: center;
 				}
 				&:hover {
@@ -218,8 +176,8 @@ $mobile: 539px;
 				float: left;
 				.wrap {
 					width: 1180px;
-					height: 400px;
-					padding-top: 80px;
+					height: 450px;
+					padding-top: 50px;
 					margin: 0 auto;
 					position: relative;
 					display: flex;
@@ -244,7 +202,6 @@ $mobile: 539px;
 					.pic {
 						position: absolute;
 						right: 0;
-						width: 400px;
 						img {
 							width: 100%;
 							height: 100%;
@@ -253,19 +210,22 @@ $mobile: 539px;
 					}
 				}
 				&[data-index="0"] {
-					background: #e1e1ff;
+					background: #e6e6f9;
+					.pic {
+						width: 450px;
+					}
 				}
 				&[data-index="1"] {
 					background: #f2e2f4;
 					.pic {
-						margin-right: 5vw;
-						img {
-							object-fit: cover;
-						}
+						width: 390px;
 					}
 				}
 				&[data-index="2"] {
-					background: #ebe5dc;
+					background: #ede7dd;
+					.pic {
+						width: 450px;
+					}
 				}
 			}
 		}
@@ -276,9 +236,10 @@ $mobile: 539px;
 		clear: both;
 	}
 }
+/* Rules */
 #rules {
 	width: 100%;
-	padding: 150px 0;
+	padding: 160px 0;
 	background: url(../img/about_bg.jpg) no-repeat
 		bottom/cover fixed;
 	position: relative;
@@ -349,10 +310,27 @@ $mobile: 539px;
 					margin-right: 10px;
 				}
 				h3 {
+					position: relative;
 					margin-bottom: 20px;
+					&::after {
+						margin-top: 10px;
+						display: block;
+						position: absolute;
+						left: 0;
+						content: "";
+						width: 0%;
+						height: 2px;
+						background: #fff;
+						transition: 0.3s;
+					}
 				}
 				&:nth-of-type(3n) {
 					margin-right: 0px;
+				}
+				&:hover h3 {
+					&::after {
+						width: 100%;
+					}
 				}
 			}
 		}
