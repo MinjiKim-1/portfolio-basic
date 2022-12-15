@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Basic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script defer src="js/main.js"></script> -->
+    <script defer src="js/anime.js"></script>
+    <script src="https://kit.fontawesome.com/579590574d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <!-- <h1 class="scrView" style="position:fixed;">
+                스크롤 확인용
+            </h1> -->
+            <h1>
+                <a href="index.html">BASIC</a>
+            </h1>
+            <!-- Web GNB -->
+            <nav class="menuWeb">
+                <ul id="gnb">
+                    <li class="on"><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+            <!-- Mobile GNB -->
+            <a href="#" class="btnCall">
+                <span>Mobile Menu</span>
+            </a>
+
+            <nav class="menuMo">
+                <h1>
+                    <a href="index.html">BASIC</a>
+                    <span>MINIMALISTIC DESIGN</span>
+                </h1>
+                <ul id="gnbMo">
+                    <li class="on"><a href="#">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Section Contact -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <div class="inner">
+            <form action="index.html"></form> <!-- 입력 완료 뒤 이동 -->
+            <fieldset> <!-- form태그의 inner같은 역할을 하는 시멘틱 태그 -->
+                <legend class="hidden">회원가입 양식 폼</legend> <!-- 문서의 h1, 테이블의 캡션처럼 이 폼을 설명하는 역할 -->
+
+                <table>
+                    <caption class="hidden">회원정보 입력양식 테이블</caption>
+                    <tr>
+                        <th scope="row">
+                            <label for="id">NAME</label>
+                        </th>
+                        <td>
+                            <input type="text" name="id" id="id" required placeholder="Your Name">
+                            <!-- 필수입력 폼일 경우 required 삽입 -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label for="email">E-MAIL</label>
+                        </th>
+                        <td>
+                            <input type="text" name="" id="email" placeholder="Your E-mail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PURPOSE</th>
+                        <td>
+                            <label for="purpose">
+                                <select name="purpose" id="purpose">
+                                    <option value="">Choose your Purpose</option>
+                                    <option value="purchasing">Purchasing</option>
+                                    <option value="associate">Associate</option>
+                                    <option value="jobApply">Job Apply</option>
+                                    <option value="etc">ETC.</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="message">MESSAGE</label>
+                        </th>
+                        <td>
+                            <textarea name="message" id="message" cols="30" rows="10"
+                                placeholder="Please Input Here"></textarea>
+                        </td>
+                    </tr>
+                    <!-- 버튼영역의 테이블 행을 합친다 -->
+                    <th colspan="2">
+                        <input type="submit" value="SUBMIT">
+                    </th>
+                </table>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- Section Location -->
+    <section id="location">
+        <h1>Location</h1>
+        <div class="inner">
+            <!-- map -->
+            <div id="map"></div>
+            <ul class="traffic">
+                <li><a href="#">Traffic Infor ON</a></li>
+                <li class="on"><a href="#">Traffic Infor OFF</a></li>
+            </ul>
+            <ul class="branch">
+                <li class="on" data-index="0"><a href="#">Main Store</a></li>
+                <li data-index="1"><a href="#">Branch 1</a></li>
+                <li data-index="2"><a href="#">Branch 2</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <H1>BASIC</H1>
+            <address>
+                <article>
+                    <h2>ADDRESS</h2>
+                    <p>1713 Hide A Way Road <br> San Jose, CA95118</p>
+                </article>
+                <article>
+                    <h2>PHONE & FAX</h2>
+                    <p>+123-456-7890 <br> +123-456-7890</p>
+                </article>
+                <article>
+                    <h2>E-MAIL</h2>
+                    <p>supports@portfolio.com <br> office@portfolio.com</p>
+                </article>
+            </address>
+            <div class="bottom">
+                <a href="#">SUBSCRIBE</a>
+                <p>Colyright &copy; 2022 BASIC ALL Right reserved.</p>
+                <ul class="snsLink">
+                    <li><i class="fab fa-google-plus"></i></li>
+                    <li><i class="fab fa-pinterest"></i></li>
+                    <li><i class="fab fa-facebook-square"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-youtube"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
