@@ -1,7 +1,9 @@
+
+
 var mapContainer = document.getElementById('map');
-const t_on = document.querySelectorAll(".traffic li")[0];
-const t_off = document.querySelectorAll(".traffic li")[1];
-const branch_btns = document.querySelectorAll(".branch li")
+const t_on = document.querySelectorAll("#location .traffic li")[0];
+const t_off = document.querySelectorAll("#location .traffic li")[1];
+const branch_btns = document.querySelectorAll("#location .branch li");
 
 
 mapOption = {
@@ -12,22 +14,22 @@ mapOption = {
 var map = new kakao.maps.Map(mapContainer, mapOption);
 var markerOptions = [
     {
-        title: "본점",
-        latLng: new kakao.maps.LatLng(37.5258975, 126.9284261),
+        title: "Main Store",
+        latLng: new kakao.maps.LatLng(37.5632348, 126.9846716),
         imgSrc: "img/marker1.png",
         imgSize: new kakao.maps.Size(232, 99),
         imgPos: { offset: new kakao.maps.Point(116, 69) },
         button: branch_btns[0],
     }, {
-        title: "지점1",
-        latLng: new kakao.maps.LatLng(35.1586975, 129.1603842),
+        title: "Branch 1",
+        latLng: new kakao.maps.LatLng(36.3525117, 127.3779744),
         imgSrc: "img/marker2.png",
         imgSize: new kakao.maps.Size(232, 99),
         imgPos: { offset: new kakao.maps.Point(116, 69) },
         button: branch_btns[1],
     }, {
-        title: "지점2",
-        latLng: new kakao.maps.LatLng(37.4565095, 126.9500385),
+        title: "Branch 3",
+        latLng: new kakao.maps.LatLng(35.1529425, 129.0595638),
         imgSrc: "img/marker3.png",
         imgSize: new kakao.maps.Size(232, 99),
         imgPos: { offset: new kakao.maps.Point(116, 69) },

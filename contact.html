@@ -8,6 +8,8 @@
     <title>Portfolio Basic</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- <script defer src="js/main.js"></script> -->
+    <script defer src="js/menu.js"></script>
+    <script defer src="js/contact.js"></script>
     <script defer src="js/anime.js"></script>
     <script src="https://kit.fontawesome.com/579590574d.js" crossorigin="anonymous"></script>
 </head>
@@ -31,7 +33,7 @@
                     <li><a href="portfolio.html">PORTFOLIO</a></li>
                     <li><a href="support.html">SUPPORT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="join.html"><i class="fas fa-user-circle"></i></a></li>
                     <li><a href="#"><i class="fas fa-search"></i></a></li>
                 </ul>
             </nav>
@@ -52,7 +54,7 @@
                     <li><a href="portfolio.html">PORTFOLIO</a></li>
                     <li><a href="support.html">SUPPORT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="#"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="join.html"><i class="fas fa-user-circle"></i></a></li>
                     <li><a href="#"><i class="fas fa-search"></i></a></li>
                 </ul>
             </nav>
@@ -60,38 +62,42 @@
     </header>
     <!-- Section Contact -->
     <section id="contact">
-        <h1>Contact Us</h1>
         <div class="inner">
-            <form action="index.html"></form> <!-- 입력 완료 뒤 이동 -->
-            <fieldset> <!-- form태그의 inner같은 역할을 하는 시멘틱 태그 -->
-                <legend class="hidden">회원가입 양식 폼</legend> <!-- 문서의 h1, 테이블의 캡션처럼 이 폼을 설명하는 역할 -->
-
+            <form action="index.html"></form>
+            <fieldset>
+                <legend class="hidden">Contact Us</legend>
                 <table>
-                    <caption class="hidden">회원정보 입력양식 테이블</caption>
+                    <caption class="hidden">Contact Form</caption>
                     <tr>
-                        <th scope="row">
+                        <th scope="col">
                             <label for="id">NAME</label>
                         </th>
-                        <td>
-                            <input type="text" name="id" id="id" required placeholder="Your Name">
-                            <!-- 필수입력 폼일 경우 required 삽입 -->
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">
+                        <th scope="col">
                             <label for="email">E-MAIL</label>
                         </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="id" id="id" required placeholder="Your Name">
+                        </td>
                         <td>
                             <input type="text" name="" id="email" placeholder="Your E-mail">
                         </td>
                     </tr>
+
                     <tr>
-                        <th scope="row">PURPOSE</th>
+                        <th scope="col">
+                            <label for="email">PURPOSE</label>
+                        </th>
+                        <th scope="col">
+                            <label for="email">PHONE</label>
+                        </th>
+                    </tr>
+                    <tr>
                         <td>
                             <label for="purpose">
                                 <select name="purpose" id="purpose">
-                                    <option value="">Choose your Purpose</option>
+                                    <option value="" class="choose">Choose your Purpose</option>
                                     <option value="purchasing">Purchasing</option>
                                     <option value="associate">Associate</option>
                                     <option value="jobApply">Job Apply</option>
@@ -99,22 +105,35 @@
                                 </select>
                             </label>
                         </td>
+                        <td>
+                            <input type="text" name="" id="email" placeholder="Your Phone">
+                        </td>
                     </tr>
                     <tr>
-                        <th scope="row">
+                        <th scope="col" colspan="2">
                             <label for="message">MESSAGE</label>
                         </th>
-                        <td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
                             <textarea name="message" id="message" cols="30" rows="10"
                                 placeholder="Please Input Here"></textarea>
                         </td>
                     </tr>
-                    <!-- 버튼영역의 테이블 행을 합친다 -->
                     <th colspan="2">
                         <input type="submit" value="SUBMIT">
                     </th>
                 </table>
+
             </fieldset>
+            <div class="lineBox">
+                <h1>Contact Us</h1>
+                <ul>
+                    <li><strong>Business Day - </strong> Monday to Friday</li>
+                    <li><strong>Business Hours - </strong> AM 9:00 - PM 4:00</li>
+                    <li>Closed on Public holidays</li>
+                </ul>
+            </div>
         </div>
 
     </section>
@@ -124,15 +143,42 @@
         <div class="inner">
             <!-- map -->
             <div id="map"></div>
-            <ul class="traffic">
-                <li><a href="#">Traffic Infor ON</a></li>
-                <li class="on"><a href="#">Traffic Infor OFF</a></li>
-            </ul>
             <ul class="branch">
-                <li class="on" data-index="0"><a href="#">Main Store</a></li>
-                <li data-index="1"><a href="#">Branch 1</a></li>
-                <li data-index="2"><a href="#">Branch 2</a></li>
+                <li class="on" data-index="0">
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Main Store
+                    </a>
+                </li>
+                <li data-index="1">
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Branch 1
+                    </a>
+                </li>
+                <li data-index="2">
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Branch 2
+                    </a>
+                </li>
             </ul>
+            <ul class="traffic">
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-car-rear"></i>
+                        Traffic Info ON
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="#">
+                        <i class="fa-solid fa-car-rear"></i>
+                        Traffic Info OFF
+                    </a>
+                </li>
+            </ul>
+
         </div>
     </section>
     <!-- Footer -->

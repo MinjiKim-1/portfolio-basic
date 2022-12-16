@@ -30,3 +30,4 @@ function activation(index) {
     btns[index].classList.add("on");
 };
 
+

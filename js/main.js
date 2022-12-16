@@ -5,9 +5,9 @@ const ul = sliderMain.querySelector("ul");
 const btnPrev = sliderMain.querySelector(".btnPrev");
 const btnNext = sliderMain.querySelector(".btnNext");
 const paging = sliderMain.querySelectorAll(".pagination a");
+const slideLis = sliderMain.querySelectorAll("ul li");
+let slideLen = slideLis.length;
 
-const lis = sliderMain.querySelectorAll("ul li");
-let len = lis.length;
 let speed = 500;
 let enableClick = true;
 
@@ -33,13 +33,16 @@ let i = 0;
 /* scroll - 변수선언 */
 const sections = document.querySelectorAll("section");
 const scrView = document.querySelector("h1");
-const bgPhone = document.querySelector("#concept .bgPhone")
 const base = -300;
+const bgWatch = document.querySelector("#introduce .inner .bgWatch");
+const bgPhone = document.querySelector("#concept .bgPhone");
+const numbers = document.querySelectorAll("#record .inner article strong span"
+);
+
 
 /* Media Query - 변수선언 */
 const btnCall = document.querySelector(".btnCall");
 const menuMo = document.querySelector(".menuMo");
-
 
 
 /* sliderMain */
@@ -179,15 +182,26 @@ window.addEventListener("scroll", () => {
     sections.forEach((el, index) => {
 
         if (scroll >= posArr[index] + base) {
-            lis.forEach((el, index) => {
+            sections.forEach((el, index) => {
                 el.classList.remove("on");
                 sections[index].classList.remove("on");
             })
-
-            lis[index].classList.add("on");
             sections[index].classList.add("on");
         }
+        if (scroll >= posArr[6] + base) {
+            counter(numbers[0], 348, 1200);
+            counter(numbers[1], 12, 3000);
+            counter(numbers[2], 618, 1000);
+            counter(numbers[3], 1192, 0);
+        }
+        // else {
+        //     numbers.forEach((el, index) => {
+        //         numbers[index].innerText = 0;
+        //     });
+        // };
     })
+    // bgWatch.style.transform = `rotate(${scroll - posArr[1] + 300}deg)`;
+    bgPhone.style.left = `${scroll - posArr[5]}px`;
 })
 
 
@@ -206,9 +220,9 @@ btnCall.onclick = function (e) {
 
 function init() {
     ul.style.left = "-100%";
-    ul.style.width = `${100 * len}%`;
-    lis.forEach((el) => {
-        el.style.width = `${100 / len}%`;
+    ul.style.width = `${100 * slideLen}%`;
+    slideLis.forEach((el) => {
+        el.style.width = `${100 / slideLen}%`;
     })
     ul.prepend(ul.lastElementChild)
 }
@@ -243,6 +257,7 @@ function prevSlide(n) {
 
 
 
+
 function activation(arr, index) {
     for (let el of arr) el.classList.remove("on");
     arr[index].classList.add("on");
@@ -257,4 +272,18 @@ function pagination(n) {
 }
 
 
+function counter(el, num, time) {
+    let current_num = parseInt(el.innerText);
+    let count_num = num - current_num
+    let interval = parseInt(time / count_num);
+    let timer = setInterval(() => {
+        current_num++;
+        if (current_num == num) {
+            clearInterval(timer);
+        }
+        el.innerText = current_num;
+    }, interval)
+
+
+}
 

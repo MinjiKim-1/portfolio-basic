@@ -2,7 +2,7 @@
 @import "reset.scss";
 @import "about.scss";
 @import "support.scss";
-// @import "contact.scss";
+@import "contact.scss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap");
 
 // Design Guide
@@ -566,7 +566,7 @@ body {
 				padding: 200px 0px;
 				transform: translateX(-100px);
 				opacity: 0;
-				transition: 0.5s;
+				transition: 0.7s;
 				// .top {
 				// 	width: 0%;
 				// 	height: 5px;
@@ -600,6 +600,8 @@ body {
 				// 	left: 0px;
 				// }
 				.content {
+					transform: translateX(-50px);
+					transition: 0.7s 0.3s;
 					h1 {
 						font-size: 50px;
 						margin-left: 8vw;
@@ -692,6 +694,11 @@ body {
 		.inner .boxWrap .lineBox {
 			transform: translateX(0);
 			opacity: 1;
+			.content {
+				transform: translateX(0);
+				transition-delay: 0.1s;
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -715,8 +722,7 @@ body {
 				margin-right: 20px;
 				transform: translateX(100px);
 				opacity: 0;
-				transition-property: all;
-				transition-duration: 1s;
+				transition-duration: 0.5s;
 				i {
 					color: $pointColor;
 					font-size: 30px;
@@ -734,7 +740,6 @@ body {
 						width: 0%;
 						height: 2px;
 						background: #fff;
-						transition: 0.3s;
 					}
 				}
 				p {
@@ -760,25 +765,24 @@ body {
 				article {
 					transform: translateX(0px);
 					opacity: 1;
-					&::nth-of-type(1) {
+					&:nth-of-type(1) {
 						transition-delay: 0s;
 					}
-					&::nth-of-type(2) {
+					&:nth-of-type(2) {
+						transition-delay: 0.1s;
+					}
+					&:nth-of-type(3) {
 						transition-delay: 0.2s;
 					}
-					&::nth-of-type(3) {
+					&:nth-of-type(4) {
+						transition-delay: 0.3s;
+					}
+					&:nth-of-type(5) {
 						transition-delay: 0.4s;
 					}
-					&::nth-of-type(4) {
-						transition-delay: 0.6s;
+					&:nth-of-type(6) {
+						transition-delay: 0.5s;
 					}
-					&::nth-of-type(5) {
-						transition-delay: 0.8s;
-					}
-					&::nth-of-type(6) {
-						transition-delay: 1s;
-					}
-
 					// 	// @for $i from 1 to 6 {
 					// 	// 	&:nth-of-type(#{$i}) {
 					// 	// 		transition-delay: calc(0.1 * #{$i}) + "s";
@@ -994,21 +998,24 @@ body {
 		height: 100%;
 		margin: 0 auto;
 		position: relative;
-		// transform: translateY(100%);
-		// opacity: 0;
-		// transition: 0.5s;
 		p {
 			font-size: 15px;
 			text-align: center;
 			font-family: "Montserrat", sans-serif;
 			line-height: 1.6;
 			margin-bottom: 50px;
+			transform: translateY(50%);
+			opacity: 0;
+			transition: 0.5s;
 		}
 		strong {
 			display: block;
 			font-size: 15px;
 			text-align: center;
 			color: $pointColor;
+			transform: translateY(50%);
+			opacity: 0;
+			transition: 0.5s;
 			span {
 				font-size: 12px;
 				line-height: 1.6;
@@ -1016,10 +1023,19 @@ body {
 			}
 		}
 	}
-	// &.on {
-	// 	transform: translateY(0);
-	// 	opacity: 1;
-	// }
+	&.on {
+		.inner {
+			p {
+				transform: translateY(0%);
+				opacity: 1;
+			}
+			strong {
+				transition-delay: 0.2s;
+				transform: translateY(0%);
+				opacity: 1;
+			}
+		}
+	}
 }
 #concept {
 	width: 100%;
@@ -1094,10 +1110,16 @@ body {
 		position: absolute;
 		top: -20%;
 		left: 8%;
-		// transform: translateX(0);
-		// opacity: 0;
-		// transition: 1s;
+		transition: 1s;
 	}
+	// .bgPhone {
+	// 	position: absolute;
+	// 	top: -20%;
+	// 	left: 8%;
+	// 	transform: translateX(0);
+	// 	opacity: 0;
+	// 	transition: 1s;
+	// }
 	// &.on {
 	// 	.bgPhone {
 	// 		opacity: 1;

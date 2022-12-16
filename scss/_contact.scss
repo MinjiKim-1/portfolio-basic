@@ -1,0 +1,183 @@
+#contact {
+	width: 100%;
+	padding: 260px 0 160px 0;
+	position: relative;
+	background: #ededf7;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+		fieldset {
+			float: left;
+			width: 580px;
+			border: none;
+			table {
+				width: 100%;
+				border-spacing: 15px;
+				transform: translateX(-15px);
+				margin-top: -60px;
+				// border-collapse: collapse;
+				th {
+					padding-top: 40px;
+					font: 14px/1 "Montserrat", sans-serif;
+					color: $pointColor;
+					text-align: left;
+					input[type="submit"] {
+						@include btnStyle;
+						margin-top: -40px;
+						float: right;
+						border: none;
+						background: $pointColor;
+					}
+				}
+				td {
+					border-bottom: 2px solid $pointColor;
+					// padding: 10px 0px;
+				}
+				input[type="text"] {
+					width: 100%;
+					height: 30px;
+					border: none;
+					font: 14px/1 "Open Sans", sans-serif;
+					color: $contentColor;
+					background: transparent;
+					padding-left: 10px;
+					&::placeholder {
+						color: #999;
+					}
+				}
+				select#purpose {
+					width: 100%;
+					height: 30px;
+					border: none;
+					font: 14px/1 "Open Sans", sans-serif;
+					color: $contentColor;
+					background: transparent;
+					padding-left: 5px;
+					color: $contentColor;
+				}
+				textarea#message {
+					width: 100%;
+					height: 100px;
+					border: none;
+					resize: none;
+					font: 14px/1 "Open Sans", sans-serif;
+					color: $contentColor;
+					background: transparent;
+					padding: 10px;
+					margin-bottom: -5px;
+					&::placeholder {
+						color: #999;
+					}
+				}
+			}
+		}
+		.lineBox {
+			width: 480px;
+			height: 400px;
+			float: right;
+			border: 5px solid $pointColor;
+			text-align: left;
+			padding: 50px;
+			margin-left: 20px;
+			transition: 0.5s;
+			h1 {
+				width: 50px;
+				font: 50px/1 "Montserrat";
+				color: $pointColor;
+				margin-bottom: 20px;
+			}
+			ul {
+				li {
+					line-height: 30px;
+					margin-left: 20px;
+					margin-right: 10px;
+					&::before {
+						content: "";
+						transform: translate(-22px, 22px);
+						display: block;
+						width: 12px;
+						height: 12px;
+						border-radius: 50%;
+						background: $pointColor;
+						background: $pointColor;
+					}
+				}
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 150px;
+				left: 83%;
+				width: 400px;
+				height: 400px;
+				background: url(../img/watch2.png) no-repeat
+					center/cover;
+			}
+		}
+	}
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+#location {
+	width: 100%;
+	padding: 160px 0 160px 0;
+	position: relative;
+	h1 {
+		position: relative;
+		@include subTitle;
+	}
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+		#map {
+			width: 100%;
+			height: 500px;
+			border: 1px solid #000;
+			margin-bottom: 20px;
+		}
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.traffic {
+			float: right;
+			li {
+				float: left;
+				margin-left: 10px;
+				a {
+					@include btnStyle;
+					border: 1px solid #ddd;
+				}
+				&.on a {
+					background: #f2f3f8;
+					color: $pointColor;
+				}
+			}
+		}
+		.branch {
+			float: left;
+			li {
+				float: left;
+				margin-right: 10px;
+				a {
+					@include btnStyle;
+					background: $pointColor;
+					color: #fff;
+				}
+				&.on a {
+					background: $pointColor;
+					background: #f2f3f8;
+					color: $pointColor;
+					border: 1px solid #ddd;
+				}
+			}
+		}
+	}
+}
