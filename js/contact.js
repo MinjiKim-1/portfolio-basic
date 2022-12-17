@@ -28,7 +28,7 @@ var markerOptions = [
         imgPos: { offset: new kakao.maps.Point(116, 69) },
         button: branch_btns[1],
     }, {
-        title: "Branch 3",
+        title: "Branch 2",
         latLng: new kakao.maps.LatLng(35.1529425, 129.0595638),
         imgSrc: "img/marker3.png",
         imgSize: new kakao.maps.Size(232, 99),

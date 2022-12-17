@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Basic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script defer src="js/main.js"></script> -->
+    <script defer src="js/join.js"></script>
+    <script defer src="js/menu.js"></script>
+    <script defer src="js/anime.js"></script>
+    <script src="https://kit.fontawesome.com/579590574d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <!-- <h1 class="scrView" style="position:fixed;">
+                스크롤 확인용
+            </h1> -->
+            <h1>
+                <a href="index.html">BASIC</a>
+            </h1>
+            <!-- Web GNB -->
+            <nav class="menuWeb">
+                <ul id="gnb">
+                    <li class="on"><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+            <!-- Mobile GNB -->
+            <a href="#" class="btnCall">
+                <span>Mobile Menu</span>
+            </a>
+
+            <nav class="menuMo">
+                <h1>
+                    <a href="index.html">BASIC</a>
+                    <span>MINIMALISTIC DESIGN</span>
+                </h1>
+                <ul id="gnbMo">
+                    <li class="on"><a href="#">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="support.html">SUPPORT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Section Join -->
+    <section id="join">
+        <div class="inner">
+            <section class="join">
+                <div class="inner">
+                    <h1>JOIN US</h1>
+
+                    <form action="result.html" method="get" id="member">
+                        <fieldset>
+                            <legend class="hidden">Sign Up</legend>
+
+                            <table>
+                                <caption class="hidden">Registration Form. ID, Password, E-mail, Gender, Job, Interests,
+                                    Comments
+                                    Table</caption>
+
+                                <tbody>
+                                    <!-- userid   -->
+                                    <tr>
+                                        <th scope="row"><label for="userid">User ID</label></th>
+                                        <td>
+                                            <input type="text" name="userid" id="userid" placeholder="Your ID">
+                                        </td>
+                                    </tr>
+                                    <!-- password -->
+                                    <tr>
+                                        <th scope="row"><label for="pwd1">Password</label></th>
+                                        <td>
+                                            <input type="password" name="pwd1" id="pwd1" placeholder="Your Password">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="pwd2">Re Password</label></th>
+                                        <td>
+                                            <input type="password" name="pwd2" id="pwd2"
+                                                placeholder="Retype Your Password">
+                                        </td>
+                                    </tr>
+                                    <!-- email -->
+                                    <tr>
+                                        <th scope="row"><label for="email">E-mail</label></th>
+                                        <!-- 메일은 일반폼도 되고 셀렉트도 됨 -->
+                                        <td>
+                                            <input type="text" name="email" id="email" placeholder="Your E-Mail">
+                                        </td>
+                                    </tr>
+                                    <!-- job -->
+                                    <tr>
+                                        <th scope="row"><label for="edu">Education</label></th>
+                                        <td>
+                                            <select name="edu" id="edu">
+                                                <option value="">Select Your Job</option>
+                                                <option value="elementary school">Buyer</option>
+                                                <option value="middle school">Alliance</option>
+                                                <option value="high school">Designer / Developer</option>
+                                                <option value="college">ETC.</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <!-- gender -->
+                                    <tr>
+                                        <th scope="row">Gender</th>
+                                        <td>
+                                            <label for="male">Male</label>
+                                            <input type="radio" name="gender" id="male" value="male">
+                                            <label for="female">Female</label>
+                                            <input type="radio" name="gender" id="female" value="female">
+                                            <label for="other">Other</label>
+                                            <input type="radio" name="gender" id="other" value="other">
+                                        </td>
+                                    </tr>
+                                    <!-- interest -->
+                                    <tr>
+                                        <th scope="row">Interests</th>
+                                        <td>
+                                            <label for="design">Design</label>
+                                            <input type="checkbox" name="interests" id="design" value="design">
+
+                                            <label for="technology">Technology</label>
+                                            <input type="checkbox" name="interests" id="technology" value="technology">
+
+                                            <label for="interior">Interior</label>
+                                            <input type="checkbox" name="interests" id="interior" value="interior">
+
+                                            <label for="etc">ETC.</label>
+                                            <input type="checkbox" name="interests" id="etc" value="etc">
+                                        </td>
+                                    </tr>
+                                    <!-- comments -->
+                                    <tr>
+                                        <th scope="row"><label for="comments">Comments</label></th>
+                                        <td>
+                                            <textarea name="comments" id="comments"
+                                                placeholder="Leave Your Comments"></textarea>
+                                        </td>
+                                    </tr>
+                                    <!-- btns -->
+                                    <tr>
+                                        <th colspan="2">
+                                            <input type="reset" value="cancel">
+                                            <input type="submit" value="submit">
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <H1>BASIC</H1>
+            <address>
+                <article>
+                    <h2>ADDRESS</h2>
+                    <p>1713 Hide A Way Road <br> San Jose, CA95118</p>
+                </article>
+                <article>
+                    <h2>PHONE & FAX</h2>
+                    <p>+123-456-7890 <br> +123-456-7890</p>
+                </article>
+                <article>
+                    <h2>E-MAIL</h2>
+                    <p>supports@portfolio.com <br> office@portfolio.com</p>
+                </article>
+            </address>
+            <div class="bottom">
+                <a href="#">SUBSCRIBE</a>
+                <p>Colyright &copy; 2022 BASIC ALL Right reserved.</p>
+                <ul class="snsLink">
+                    <li><i class="fab fa-google-plus"></i></li>
+                    <li><i class="fab fa-pinterest"></i></li>
+                    <li><i class="fab fa-facebook-square"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-youtube"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

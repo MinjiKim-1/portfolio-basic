@@ -40,10 +40,6 @@ const numbers = document.querySelectorAll("#record .inner article strong span"
 );
 
 
-/* Media Query - 변수선언 */
-const btnCall = document.querySelector(".btnCall");
-const menuMo = document.querySelector(".menuMo");
-
 
 /* sliderMain */
 init();
@@ -189,9 +185,9 @@ window.addEventListener("scroll", () => {
             sections[index].classList.add("on");
         }
         if (scroll >= posArr[6] + base) {
-            counter(numbers[0], 348, 1200);
-            counter(numbers[1], 12, 3000);
-            counter(numbers[2], 618, 1000);
+            counter(numbers[0], 348, 5);
+            counter(numbers[1], 12, 300);
+            counter(numbers[2], 618, 3);
             counter(numbers[3], 1192, 0);
         }
         // else {
@@ -203,16 +199,6 @@ window.addEventListener("scroll", () => {
     // bgWatch.style.transform = `rotate(${scroll - posArr[1] + 300}deg)`;
     bgPhone.style.left = `${scroll - posArr[5]}px`;
 })
-
-
-
-/* Media Query */
-btnCall.onclick = function (e) {
-    e.preventDefault();
-
-    btnCall.classList.toggle("on");
-    menuMo.classList.toggle("on");
-}
 
 
 
@@ -282,7 +268,7 @@ function counter(el, num, time) {
             clearInterval(timer);
         }
         el.innerText = current_num;
-    }, interval)
+    }, time)
 
 
 }
