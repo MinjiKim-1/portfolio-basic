@@ -153,19 +153,14 @@
 		table {
 			width: 100%;
 			border-bottom: 2px solid $pointColor;
-			border-collapse: collapse; // 테이블에 기본으로 있는 세로선 삭제
+			border-collapse: collapse;
 			margin-bottom: 50px;
-			// thead, tbody는 명시적이라 따로 스타일을 주진 않음
 			tr {
-				&:nth-of-type(even) {
+				&:hover {
+					font-weight: bold;
 					background: #f2f3f8;
 				}
-				&:hover {
-					background: lightcyan;
-				}
-				// 중복 코드는 피하되 미연의 사고를 방지하기 위해 주는 경우는 있다. 스타일 따라 다름
 				th {
-					// scope를 잡아주었기 때문에 th만 잡아주면 아래 나머지는 자동으로 정렬된다.
 					padding: 15px;
 					background: $pointColor;
 					font-family: "Montserrat", sans-serif;
@@ -181,8 +176,8 @@
 					}
 				}
 				td {
-					padding: 13px;
-					// border-bottom: 1px solid #ddd;
+					padding: 20px 10px;
+					border-bottom: 1px solid #f2f3f8;
 					font-family: "Open Sans", sans-serif;
 					font-size: 14px;
 					color: $contentColor;

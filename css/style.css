@@ -241,26 +241,23 @@ a {
 /* Rules */
 #rules {
   width: 100%;
-  padding: 160px 0;
-  background: url(../img/about_bg.jpg) no-repeat bottom/cover fixed;
+  background: #000dbf;
   position: relative;
 }
-#rules::before {
-  content: "";
-  display: block;
+#rules video {
   width: 100%;
   height: 100%;
-  background-color: #000dbf;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.7;
+  object-fit: cover;
+  opacity: 0.4;
 }
 #rules .inner {
   width: 1180px;
   height: 350px;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #rules .inner h2,
 #rules .inner h3,
@@ -498,11 +495,9 @@ a {
   border-collapse: collapse;
   margin-bottom: 50px;
 }
-#community .inner table tr:nth-of-type(even) {
-  background: #f2f3f8;
-}
 #community .inner table tr:hover {
-  background: lightcyan;
+  font-weight: bold;
+  background: #f2f3f8;
 }
 #community .inner table tr th {
   padding: 15px;
@@ -520,7 +515,8 @@ a {
   width: 15%;
 }
 #community .inner table tr td {
-  padding: 13px;
+  padding: 20px 10px;
+  border-bottom: 1px solid #f2f3f8;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   color: #040000;
@@ -765,6 +761,12 @@ a {
   background-color: #000dbf;
   text-align: center;
   transition: 0.4s;
+  width: 53px;
+  height: 53px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 53px;
+  border-radius: 50%;
   border: 1px solid #ddd;
 }
 #location .inner .traffic li a:hover {
@@ -797,11 +799,137 @@ a {
 #location .inner .branch li a:hover {
   background-color: #040000;
 }
+#location .inner .branch li a i {
+  margin-right: 5px;
+}
 #location .inner .branch li.on a {
   background: #000dbf;
   background: #f2f3f8;
   color: #000dbf;
   border: 1px solid #ddd;
+}
+
+.join {
+  width: 100%;
+  padding: 260px 0;
+}
+.join .inner {
+  width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+.join .inner h1 {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.join .inner h1::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 4px solid #000dbf;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -30px;
+}
+.join .inner fieldset {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.join .inner fieldset table {
+  width: 70%;
+  padding: 0px 20px;
+  border-top: 2px solid #000dbf;
+  border-bottom: 2px solid #000dbf;
+  margin-bottom: 35px;
+}
+.join .inner fieldset table th,
+.join .inner fieldset table td {
+  border-bottom: 1px solid #f2f3f8;
+  padding: 20px;
+}
+.join .inner fieldset table th {
+  width: 20%;
+  padding-top: 38px;
+  vertical-align: text-top;
+  text-align: left;
+  font: 14px/1 "Montserrat";
+  color: #000dbf;
+}
+.join .inner fieldset table tr:nth-of-type(6) th, .join .inner fieldset table tr:nth-of-type(7) th {
+  padding: 30px 0 30px 20px;
+}
+.join .inner fieldset table td label {
+  font: 14px/1 "Open Sans", sans-serif;
+  color: #040000;
+  margin-right: 5px;
+}
+.join .inner fieldset table td input[type=text],
+.join .inner fieldset table td input[type=password],
+.join .inner fieldset table td select {
+  width: 100%;
+  font: 14px/1 "Open Sans", sans-serif;
+  color: #999;
+  background: #f2f3f8;
+  padding: 15px;
+  border: 1px solid #aaa;
+}
+.join .inner fieldset table td select {
+  color: #040000;
+}
+.join .inner fieldset table td input[type=radio],
+.join .inner fieldset table td input[type=checkbox] {
+  position: relative;
+  top: 1px;
+  margin-right: 30px;
+  transform: scale(1.2);
+}
+.join .inner fieldset table td textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  background: #f2f3f8;
+  padding: 15px;
+  border: 1px solid #aaa;
+  font: 14px/1 "Open Sans", sans-serif;
+  color: #999;
+}
+.join .inner fieldset table td p {
+  font: 11px/1 "Open Sans", sans-serif;
+  color: hotpink;
+  margin-top: 5px;
+}
+.join .inner fieldset .btnWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.join .inner fieldset .btnWrap input[type=reset],
+.join .inner fieldset .btnWrap input[type=submit] {
+  display: block;
+  width: 170px;
+  padding: 20px;
+  font: 12px/1 "Montserrat", sans-serif;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #000dbf;
+  text-align: center;
+  transition: 0.4s;
+  display: inline;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 5px;
+  border: none;
+}
+.join .inner fieldset .btnWrap input[type=reset]:hover,
+.join .inner fieldset .btnWrap input[type=submit]:hover {
+  background-color: #040000;
 }
 
 h1,
@@ -1488,6 +1616,7 @@ body {
   width: 0%;
   height: 2px;
   background: #fff;
+  transition: 0.3s;
 }
 #skill .inner .wrap article p {
   font-size: 12px;

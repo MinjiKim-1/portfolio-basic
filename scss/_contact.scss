@@ -153,6 +153,12 @@
 				margin-left: 10px;
 				a {
 					@include btnStyle;
+					width: 53px;
+					height: 53px;
+					padding: 0;
+					font-size: 20px;
+					line-height: 53px;
+					border-radius: 50%;
 					border: 1px solid #ddd;
 				}
 				&.on a {
@@ -170,6 +176,9 @@
 					@include btnStyle;
 					background: $pointColor;
 					color: #fff;
+					i {
+						margin-right: 5px;
+					}
 				}
 				&.on a {
 					background: $pointColor;
