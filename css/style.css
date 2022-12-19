@@ -796,6 +796,7 @@ a {
   float: right;
   border: none;
   background: #000dbf;
+  cursor: pointer;
 }
 #contact .inner fieldset table th input[type=submit]:hover {
   background-color: #040000;

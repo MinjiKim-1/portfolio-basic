@@ -123,7 +123,7 @@ function isPhone(el, len) {
         if (errMsgs.length > 0) return false;
 
         const errMsg = document.createElement("p");
-        errMsg.append("Please enter at least ${len} numbers.");
+        errMsg.append(`Please enter at least ${len} numbers.`);
         input.closest("td").append(errMsg)
 
         return false;
