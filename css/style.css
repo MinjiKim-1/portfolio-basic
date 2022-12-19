@@ -241,6 +241,7 @@ a {
 /* Rules */
 #rules {
   width: 100%;
+  height: 760px;
   background: #000dbf;
   position: relative;
 }
@@ -622,6 +623,7 @@ a {
   background-color: #040000;
 }
 #contact .inner fieldset table td {
+  position: relative;
   border-bottom: 2px solid #000dbf;
 }
 #contact .inner fieldset table input[type=text] {
@@ -659,6 +661,13 @@ a {
 }
 #contact .inner fieldset table textarea#message::placeholder {
   color: #999;
+}
+#contact .inner fieldset table p {
+  position: absolute;
+  font-size: 0;
+  font: 11px/1 "Open Sans", sans-serif;
+  color: hotpink;
+  margin-top: 8px;
 }
 #contact .inner .lineBox {
   width: 480px;
@@ -984,7 +993,7 @@ body {
   align-items: center;
   transition: 0.2s;
 }
-#header .inner #gnb li:nth-of-type(7) a, #header .inner #gnb li:nth-of-type(8) a {
+#header .inner #gnb li:nth-of-type(6) a, #header .inner #gnb li:nth-of-type(7) a {
   font-size: 18px;
 }
 #header .inner #gnb li:hover a {

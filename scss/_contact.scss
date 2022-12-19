@@ -31,6 +31,7 @@
 					}
 				}
 				td {
+					position: relative;
 					border-bottom: 2px solid $pointColor;
 					// padding: 10px 0px;
 				}
@@ -69,6 +70,14 @@
 					&::placeholder {
 						color: #999;
 					}
+				}
+				p {
+					position: absolute;
+					// transform: translateY(2px);
+					font-size: 0;
+					font: 11px/1 "Open Sans", sans-serif;
+					color: hotpink;
+					margin-top: 8px;
 				}
 			}
 		}

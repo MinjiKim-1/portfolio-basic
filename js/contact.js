@@ -1,9 +1,141 @@
 
 
+/* contact form 변수 선언 */
+const form = document.querySelector("#contact #mailform");
+const btnSubmit = form.querySelector("input[type=submit]")
+console.log(form);
+console.log(btnSubmit);
+
+/* kakao map 변수 선언 */
 var mapContainer = document.getElementById('map');
 const t_on = document.querySelectorAll("#location .traffic li")[0];
 const t_off = document.querySelectorAll("#location .traffic li")[1];
 const branch_btns = document.querySelectorAll("#location .branch li");
+
+
+
+
+
+btnSubmit.addEventListener("click", (e) => {
+
+    if (!isTxt("name", 1)) e.preventDefault();
+    if (!isEmail("email", 20)) e.preventDefault();
+    if (!isSelect("purpose")) e.preventDefault();
+    if (!isPhone("phone", 7)) e.preventDefault();
+    if (!isTxt("message", 20)) e.preventDefault();
+    // 텍스트 인증 함수가 참이 아니라면(!) 멈추게 설정 
+
+})
+
+/* type이 text인 form 요소 인증함수 */
+function isTxt(el, len) {
+
+    if (len === undefined) len = 5;
+    let input = form.querySelector(`[name=${el}]`);
+    let txt = input.value;
+
+    if (txt.length >= len) { // 입력한 value의 글자수가 설정한 len의 값 이상이라면?
+
+        const errMsgs = input.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) input.closest("td").querySelector("p").remove();
+        return true;
+
+    } else {
+
+        const errMsgs = input.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) return false;
+
+        const errMsg = document.createElement("p");
+        errMsg.append(`Please enter at least ${len} characters.`);
+        input.closest("td").append(errMsg)
+
+        return false;
+    }
+}
+
+/* type이 text인데 email인 요소 인증함수 */
+function isEmail(el) {
+    let input = form.querySelector(`[name=${el}]`);
+    let txt = input.value;
+
+    if (/@/.test(txt)) { // @가 있는가?
+
+        const errMsgs = input.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) input.closest("td").querySelector("p").remove();
+
+        return true;
+
+    } else {
+
+        const errMsgs = input.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) return false;
+
+        const errMsg = document.createElement("p");
+        errMsg.append("Please enter a full email address including '@'");
+        input.closest("td").append(errMsg)
+
+        return false;
+    }
+}
+
+
+/* select 인증함수 */
+function isSelect(el) {
+    let sel = form.querySelector(`[name=${el}]`);
+    let sel_index = sel.options.selectedIndex;
+    let val = sel[sel_index].value;
+
+    if (val !== "") { // 밸류값이 비어있지 않다면? (!== 같지 않다면)
+
+        const errMsgs = sel.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) sel.closest("td").querySelector("p").remove();
+
+        return true;
+
+    } else {
+
+        const errMsgs = sel.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) return false;
+
+        const errMsg = document.createElement("p");
+        errMsg.append("Please check the required items.");
+        sel.closest("td").append(errMsg);
+
+        return false;
+    }
+}
+
+/* type이 text인데 phone인 요소 인증함수 */
+function isPhone(el, len) {
+    let input = form.querySelector(`[name=${el}]`);
+    let num = input.value;
+
+    if (num.length >= len && /0-9/.test(num)) { // input으로 입력받은 글자가 len개 이상 & 숫자가 있는가?
+
+        const errMsgs = input.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) input.closest("td").querySelector("p").remove();
+
+        return true;
+
+    } else {
+
+        const errMsgs = input.closest("td").querySelectorAll("p");
+        if (errMsgs.length > 0) return false;
+
+        const errMsg = document.createElement("p");
+        errMsg.append("Please enter at least ${len} numbers.");
+        input.closest("td").append(errMsg)
+
+        return false;
+    }
+}
+
+
+
+
+
+
+
 
 
 mapOption = {
@@ -78,33 +210,8 @@ window.onresize = () => {
 }
 
 
+
 /* 교통정보 표시 */
-// t_on.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     if (t_on.classList.contains("on")) return;
-
-//     map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-
-//     t_on.classList.add("on");
-//     t_off.classList.remove("on");
-
-// });
-
-// t_off.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     if (t_off.classList.contains("on")) return;
-
-//     map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-
-//     t_off.classList.add("on");
-//     t_on.classList.remove("on");
-
-// });
-
-
-
 t_on.addEventListener("click", (e) => {
     e.preventDefault();
     if (!t_on.classList.contains("on")) {
@@ -115,9 +222,6 @@ t_on.addEventListener("click", (e) => {
         map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
     }
 });
-
-
-
 
 
 
