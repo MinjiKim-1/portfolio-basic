@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "reset.scss";
 @import "about.scss";
+@import "portfolio.scss";
 @import "support.scss";
 @import "contact.scss";
 @import "join.scss";
@@ -36,6 +37,7 @@ body {
 	background-color: $pointColor;
 	text-align: center;
 	transition: 0.4s;
+	cursor: pointer;
 	&:hover {
 		background-color: $contentColor;
 	}
