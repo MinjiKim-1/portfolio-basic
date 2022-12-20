@@ -12,6 +12,14 @@ a {
 	text-decoration: none;
 }
 
+fieldset {
+	border: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
 .wrap {
 	&::after {
 		content: "";

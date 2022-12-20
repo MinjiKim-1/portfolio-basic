@@ -16,6 +16,14 @@ a {
   text-decoration: none;
 }
 
+fieldset {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 .wrap::after {
   content: "";
   display: block;
@@ -72,13 +80,6 @@ a {
   margin-bottom: 20px;
   position: relative;
 }
-#members .inner article .pic img {
-  filter: grayscale(1);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s;
-}
 #members .inner article .pic .box {
   width: 260px;
   height: 260px;
@@ -100,6 +101,13 @@ a {
   text-align: center;
   transform: translateY(-6px);
   color: #fff;
+}
+#members .inner article .pic img {
+  filter: grayscale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
 }
 #members .inner article .pic:hover img {
   filter: grayscale(0);
@@ -241,7 +249,8 @@ a {
 /* Rules */
 #rules {
   width: 100%;
-  height: 760px;
+  height: 670px;
+  font-size: 0;
   background: #000dbf;
   position: relative;
 }
@@ -253,7 +262,6 @@ a {
 }
 #rules .inner {
   width: 1180px;
-  height: 350px;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -267,23 +275,15 @@ a {
 }
 #rules .inner .ruleTitle {
   position: relative;
+  margin-top: 50px;
   margin-bottom: 160px;
 }
 #rules .inner .ruleTitle h2 {
+  font-size: 24px;
   margin-left: 60px;
 }
-#rules .inner .ruleTitle h2::before {
-  display: block;
-  content: "";
-  top: -8px;
-  right: 0;
-  width: 100%;
-  height: 70px;
-  background-color: transparent;
-  position: absolute;
-  z-index: 2;
-}
 #rules .inner .ruleTitle p {
+  font-size: 14px;
   margin-left: 60px;
 }
 #rules .inner .ruleTitle span {
@@ -309,6 +309,7 @@ a {
   margin-right: 10px;
 }
 #rules .inner .contents article h3 {
+  font-size: 16px;
   position: relative;
   margin-bottom: 20px;
 }
@@ -323,6 +324,9 @@ a {
   background: #fff;
   transition: 0.3s;
 }
+#rules .inner .contents article p {
+  font-size: 12px;
+}
 #rules .inner .contents article:nth-of-type(3n) {
   margin-right: 0px;
 }
@@ -330,6 +334,103 @@ a {
   width: 100%;
 }
 
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: 1179px) {
+  #members .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+  #members .inner article {
+    width: 32%;
+    height: 32%;
+    margin-right: 2%;
+  }
+  #role #sliderText .inner article {
+    padding: 0vw 5vw;
+  }
+  #role #sliderText .inner article .pic {
+    margin-right: 18%;
+  }
+  #rules .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+  #rules .inner .contents article {
+    width: 32%;
+    margin-right: 2%;
+  }
+}
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: 539px) {
+  #members .inner article .pic .box {
+    width: 100%;
+    height: 100%;
+    margin-left: -25vw;
+    margin-top: -25vh;
+  }
+  #role #sliderText .btnBox {
+    width: 100%;
+  }
+  #role #sliderText .btnBox li {
+    width: 32%;
+    margin: 1%;
+  }
+  #role #sliderText .btnBox li:nth-of-type(1) {
+    margin-left: 0;
+  }
+  #role #sliderText .btnBox li:nth-of-type(3) {
+    margin-right: 0;
+  }
+  #role #sliderText .inner article .wrap {
+    width: 100%;
+    height: 700px;
+    padding: 100px 5vw 0;
+    align-items: flex-start;
+  }
+  #role #sliderText .inner article .wrap .content p {
+    width: 100%;
+  }
+  #role #sliderText .inner article .wrap .pic {
+    margin-right: -1%;
+    margin-top: 70%;
+  }
+  #role #sliderText .inner article[data-index="0"] .pic {
+    width: 100%;
+  }
+  #role #sliderText .inner article[data-index="1"] .content {
+    padding: 20px 0px;
+  }
+  #role #sliderText .inner article[data-index="1"] .content p {
+    margin-bottom: 0px;
+  }
+  #role #sliderText .inner article[data-index="1"] .pic {
+    margin-right: 6%;
+    width: 90%;
+  }
+  #role #sliderText .inner article[data-index="2"] .content {
+    padding: 20px 0px;
+  }
+  #role #sliderText .inner article[data-index="2"] .content p {
+    margin-bottom: 0px;
+  }
+  #role #sliderText .inner article[data-index="2"] .pic {
+    margin-right: 5%;
+    width: 90%;
+  }
+  #rules {
+    height: 100vh;
+  }
+  #rules .inner .ruleTitle {
+    margin-bottom: 100px;
+  }
+  #rules .inner .ruleTitle span {
+    top: -45px;
+  }
+  #rules .inner .contents article {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
 #portfolio {
   width: 100%;
   padding: 260px 0 100px 0;
@@ -508,6 +609,31 @@ a {
   cursor: pointer;
 }
 
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: 1179px) {
+  #portfolio {
+    padding: 260px 0 100px 0;
+  }
+  #portfolio .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+  #portfolio .inner #gallery #searchBox #search {
+    width: 30vw;
+  }
+}
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: 539px) {
+  #portfolio .inner #gallery #searchBox #search {
+    width: 80%;
+  }
+  #portfolio .inner #gallery #searchBox button {
+    width: 20%;
+  }
+  #portfolio .inner #gallery #imgList li {
+    width: 50%;
+  }
+}
 /* FAQ */
 #faq {
   width: 100%;
@@ -549,7 +675,7 @@ a {
   background: url(../img/pen.png) no-repeat center/cover;
 }
 #faq .inner .container {
-  max-width: 580px;
+  width: 580px;
   display: flex;
   flex-direction: column;
 }
@@ -644,7 +770,7 @@ a {
 /* Community */
 #community {
   width: 100%;
-  padding: 160px 0 160px 0;
+  padding: 160px 0;
   position: relative;
 }
 #community .inner {
@@ -754,6 +880,73 @@ a {
   background: #f2f3f8;
 }
 
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: 1179px) {
+  #faq .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+  #faq .inner .lineBox {
+    width: 35vw;
+  }
+  #faq .inner .lineBox::after {
+    top: 20%;
+    left: 35%;
+    width: 40vw;
+    height: 40vw;
+  }
+  #faq .inner .container {
+    max-width: 45vw;
+  }
+  #community .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+}
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: 539px) {
+  #faq {
+    padding: 200px 0 160px 0;
+  }
+  #faq .inner {
+    width: 100%;
+    padding: 5vw 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  #faq .inner .lineBox {
+    width: 85vw;
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  #faq .inner .lineBox h1 {
+    width: auto;
+    font-size: 35px;
+  }
+  #faq .inner .lineBox::after {
+    top: 20%;
+    left: 55%;
+    width: 55vw;
+    height: 55vw;
+  }
+  #faq .inner .container {
+    max-width: 85vw;
+  }
+  #community .inner table tr th:nth-of-type(1) {
+    width: 13%;
+  }
+  #community .inner table tr th:nth-of-type(3) {
+    width: 20%;
+  }
+  #community .inner table tr th:nth-of-type(4) {
+    width: 0%;
+    display: none;
+  }
+  #community .inner table tr td:nth-of-type(4) {
+    display: none;
+  }
+}
 #contact {
   width: 100%;
   padding: 260px 0 160px 0;
@@ -764,15 +957,15 @@ a {
   width: 1180px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #contact .inner fieldset {
-  float: left;
   width: 580px;
-  border: none;
 }
 #contact .inner fieldset table {
   width: 100%;
-  border-spacing: 15px;
   transform: translateX(-15px);
   margin-top: -60px;
 }
@@ -849,6 +1042,7 @@ a {
   margin-top: 8px;
 }
 #contact .inner .lineBox {
+  position: relative;
   width: 480px;
   height: 400px;
   float: right;
@@ -997,20 +1191,74 @@ a {
   border: 1px solid #ddd;
 }
 
-.join {
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: 1179px) {
+  #contact .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+  #contact .inner fieldset {
+    width: 45vw;
+  }
+  #contact .inner .lineBox {
+    width: 35vw;
+  }
+  #contact .inner .lineBox h1 {
+    width: auto;
+    font-size: 35px;
+  }
+  #contact .inner .lineBox::after {
+    top: 200px;
+    left: 75%;
+    width: 30vw;
+    height: 30vw;
+  }
+  #location .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+}
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: 539px) {
+  #contact .inner {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  #contact .inner fieldset {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #contact .inner .lineBox {
+    width: 85vw;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  #contact .inner .lineBox h1 {
+    width: auto;
+    font-size: 35px;
+  }
+  #contact .inner .lineBox::after {
+    top: 55%;
+    left: 65%;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+#join {
   width: 100%;
   padding: 260px 0;
 }
-.join .inner {
+#join .inner {
   width: 1180px;
   margin: 0 auto;
   position: relative;
 }
-.join .inner h1 {
+#join .inner h1 {
   text-align: center;
   margin-bottom: 100px;
 }
-.join .inner h1::before {
+#join .inner h1::before {
   content: "";
   display: block;
   width: 6px;
@@ -1022,27 +1270,26 @@ a {
   margin-left: -4px;
   margin-top: -30px;
 }
-.join .inner fieldset {
+#join .inner fieldset {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: none;
 }
-.join .inner fieldset table {
+#join .inner fieldset table {
   width: 70%;
   padding: 0px 20px;
   border-top: 2px solid #000dbf;
   border-bottom: 2px solid #000dbf;
   margin-bottom: 35px;
 }
-.join .inner fieldset table th,
-.join .inner fieldset table td {
+#join .inner fieldset table th,
+#join .inner fieldset table td {
   border-bottom: 1px solid #f2f3f8;
   padding: 20px;
 }
-.join .inner fieldset table th {
+#join .inner fieldset table th {
   width: 20%;
   padding-top: 38px;
   vertical-align: text-top;
@@ -1050,17 +1297,17 @@ a {
   font: 14px/1 "Montserrat";
   color: #000dbf;
 }
-.join .inner fieldset table tr:nth-of-type(6) th, .join .inner fieldset table tr:nth-of-type(7) th {
+#join .inner fieldset table tr:nth-of-type(6) th, #join .inner fieldset table tr:nth-of-type(7) th {
   padding: 30px 0 30px 20px;
 }
-.join .inner fieldset table td label {
+#join .inner fieldset table td label {
   font: 14px/1 "Open Sans", sans-serif;
   color: #040000;
   margin-right: 5px;
 }
-.join .inner fieldset table td input[type=text],
-.join .inner fieldset table td input[type=password],
-.join .inner fieldset table td select {
+#join .inner fieldset table td input[type=text],
+#join .inner fieldset table td input[type=password],
+#join .inner fieldset table td select {
   width: 100%;
   font: 14px/1 "Open Sans", sans-serif;
   color: #999;
@@ -1068,17 +1315,17 @@ a {
   padding: 15px;
   border: 1px solid #aaa;
 }
-.join .inner fieldset table td select {
+#join .inner fieldset table td select {
   color: #040000;
 }
-.join .inner fieldset table td input[type=radio],
-.join .inner fieldset table td input[type=checkbox] {
+#join .inner fieldset table td input[type=radio],
+#join .inner fieldset table td input[type=checkbox] {
   position: relative;
   top: 1px;
   margin-right: 30px;
   transform: scale(1.2);
 }
-.join .inner fieldset table td textarea {
+#join .inner fieldset table td textarea {
   resize: none;
   width: 100%;
   height: 150px;
@@ -1088,18 +1335,18 @@ a {
   font: 14px/1 "Open Sans", sans-serif;
   color: #999;
 }
-.join .inner fieldset table td p {
+#join .inner fieldset table td p {
   font: 11px/1 "Open Sans", sans-serif;
   color: hotpink;
   margin-top: 5px;
 }
-.join .inner fieldset .btnWrap {
+#join .inner fieldset .btnWrap {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.join .inner fieldset .btnWrap input[type=reset],
-.join .inner fieldset .btnWrap input[type=submit] {
+#join .inner fieldset .btnWrap input[type=reset],
+#join .inner fieldset .btnWrap input[type=submit] {
   display: block;
   width: 170px;
   padding: 20px;
@@ -1115,20 +1362,52 @@ a {
   margin: 5px;
   border: none;
 }
-.join .inner fieldset .btnWrap input[type=reset]:hover,
-.join .inner fieldset .btnWrap input[type=submit]:hover {
+#join .inner fieldset .btnWrap input[type=reset]:hover,
+#join .inner fieldset .btnWrap input[type=submit]:hover {
   background-color: #040000;
 }
 
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: 1179px) {
+  #join .inner {
+    width: 100%;
+    padding: 0vw 5vw;
+  }
+  #join .inner fieldset table {
+    width: 100%;
+    padding: 0;
+  }
+}
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: 539px) {
+  #join .inner fieldset table {
+    width: 100%;
+  }
+  #join .inner fieldset table td {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+  }
+  #join .inner fieldset table td input[type=radio],
+  #join .inner fieldset table td input[type=checkbox] {
+    position: relative;
+    top: -13px;
+    transform: scale(1.5);
+  }
+}
 h1,
 h2 {
   font-family: "Montserrat", sans-serif;
   color: #000dbf;
+  font-size: 25px;
 }
 
 p {
   font-family: "Open Sans", sans-serif;
   color: #040000;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 body {
@@ -1795,7 +2074,7 @@ body {
   margin-bottom: 10px;
 }
 #skill .inner .wrap article h2 {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 #skill .inner .wrap article h2::after {
@@ -2092,7 +2371,7 @@ body {
   position: relative;
 }
 #quote .inner p {
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;

@@ -63,13 +63,6 @@ $mobile: 539px;
 				overflow: hidden;
 				margin-bottom: 20px;
 				position: relative;
-				img {
-					filter: grayscale(1);
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-					transition: 0.5s;
-				}
 				.box {
 					width: 260px;
 					height: 260px;
@@ -91,6 +84,13 @@ $mobile: 539px;
 						transform: translateY(-6px);
 						color: #fff;
 					}
+				}
+				img {
+					filter: grayscale(1);
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					transition: 0.5s;
 				}
 				&:hover {
 					img {
@@ -238,7 +238,8 @@ $mobile: 539px;
 /* Rules */
 #rules {
 	width: 100%;
-	height: 760px;
+	height: 670px;
+	font-size: 0;
 	background: $pointColor;
 	position: relative;
 	video {
@@ -249,13 +250,11 @@ $mobile: 539px;
 	}
 	.inner {
 		width: 1180px;
-		height: 350px;
 		margin: 0 auto;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-
 		h2,
 		h3,
 		p {
@@ -263,23 +262,14 @@ $mobile: 539px;
 		}
 		.ruleTitle {
 			position: relative;
-
+			margin-top: 50px;
 			margin-bottom: 160px;
 			h2 {
+				font-size: 24px;
 				margin-left: 60px;
-				&::before {
-					display: block;
-					content: "";
-					top: -8px;
-					right: 0;
-					width: 100%;
-					height: 70px;
-					background-color: transparent;
-					position: absolute;
-					z-index: 2;
-				}
 			}
 			p {
+				font-size: 14px;
 				margin-left: 60px;
 			}
 			span {
@@ -307,6 +297,7 @@ $mobile: 539px;
 					margin-right: 10px;
 				}
 				h3 {
+					font-size: 16px;
 					position: relative;
 					margin-bottom: 20px;
 					&::after {
@@ -321,6 +312,9 @@ $mobile: 539px;
 						transition: 0.3s;
 					}
 				}
+				p {
+					font-size: 12px;
+				}
 				&:nth-of-type(3n) {
 					margin-right: 0px;
 				}
@@ -328,6 +322,145 @@ $mobile: 539px;
 					&::after {
 						width: 100%;
 					}
+				}
+			}
+		}
+	}
+}
+
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: $tablet) {
+	#members {
+		.inner {
+			width: 100%;
+			padding: 0vw 5vw;
+			article {
+				width: 32%;
+				height: 32%;
+				margin-right: 2%;
+			}
+		}
+	}
+	#role {
+		#sliderText {
+			.inner {
+				article {
+					padding: 0vw 5vw;
+					.pic {
+						margin-right: 18%;
+					}
+				}
+			}
+		}
+	}
+	#rules {
+		.inner {
+			width: 100%;
+			padding: 0vw 5vw;
+			.contents {
+				article {
+					width: 32%;
+					margin-right: 2%;
+				}
+			}
+		}
+	}
+}
+
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: $mobile) {
+	#members {
+		.inner {
+			article {
+				.pic {
+					.box {
+						width: 100%;
+						height: 100%;
+						margin-left: -25vw;
+						margin-top: -25vh;
+					}
+				}
+			}
+		}
+	}
+	#role {
+		#sliderText {
+			.btnBox {
+				width: 100%;
+				li {
+					width: 32%;
+					margin: 1%;
+					&:nth-of-type(1) {
+						margin-left: 0;
+					}
+					&:nth-of-type(3) {
+						margin-right: 0;
+					}
+				}
+			}
+			.inner {
+				article {
+					.wrap {
+						width: 100%;
+						height: 700px;
+						padding: 100px 5vw 0;
+						align-items: flex-start;
+						.content {
+							p {
+								width: 100%;
+							}
+						}
+						.pic {
+							margin-right: -1%;
+							margin-top: 70%;
+						}
+					}
+					&[data-index="0"] {
+						.pic {
+							width: 100%;
+						}
+					}
+					&[data-index="1"] {
+						.content {
+							padding: 20px 0px;
+							p {
+								margin-bottom: 0px;
+							}
+						}
+						.pic {
+							margin-right: 6%;
+							width: 90%;
+						}
+					}
+					&[data-index="2"] {
+						.content {
+							padding: 20px 0px;
+							p {
+								margin-bottom: 0px;
+							}
+						}
+						.pic {
+							margin-right: 5%;
+							width: 90%;
+						}
+					}
+				}
+			}
+		}
+	}
+	#rules {
+		height: 100vh;
+		.inner {
+			.ruleTitle {
+				margin-bottom: 100px;
+				span {
+					top: -45px;
+				}
+			}
+			.contents {
+				article {
+					width: 100%;
+					margin-bottom: 50px;
 				}
 			}
 		}

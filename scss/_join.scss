@@ -1,4 +1,4 @@
-.join {
+#join {
 	width: 100%;
 	padding: 260px 0;
 
@@ -16,7 +16,6 @@
 			flex-wrap: wrap;
 			justify-content: center;
 			align-items: center;
-			border: none;
 			table {
 				width: 70%;
 				padding: 0px 20px;
@@ -99,6 +98,47 @@
 					transition: 0.5s;
 					margin: 5px;
 					border: none;
+				}
+			}
+		}
+	}
+}
+
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: $tablet) {
+	#join {
+		.inner {
+			width: 100%;
+			padding: 0vw 5vw;
+			fieldset {
+				table {
+					width: 100%;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: $mobile) {
+	#join {
+		.inner {
+			fieldset {
+				table {
+					width: 100%;
+					td {
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: column;
+						justify-content: left;
+						input[type="radio"],
+						input[type="checkbox"] {
+							position: relative;
+							top: -13px;
+							transform: scale(1.5);
+						}
+					}
 				}
 			}
 		}

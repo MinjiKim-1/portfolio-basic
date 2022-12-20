@@ -38,7 +38,7 @@
 			}
 		}
 		.container {
-			max-width: 580px;
+			width: 580px;
 			display: flex;
 			flex-direction: column;
 			.tab {
@@ -141,7 +141,7 @@
 /* Community */
 #community {
 	width: 100%;
-	padding: 160px 0 160px 0;
+	padding: 160px 0;
 	position: relative;
 	.inner {
 		width: 1180px;
@@ -233,6 +233,92 @@
 					}
 					&.on {
 						background: #f2f3f8;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: $tablet) {
+	#faq {
+		.inner {
+			width: 100%;
+			padding: 0vw 5vw;
+			.lineBox {
+				width: 35vw;
+				&::after {
+					top: 20%;
+					left: 35%;
+					width: 40vw;
+					height: 40vw;
+				}
+			}
+			.container {
+				max-width: 45vw;
+			}
+		}
+	}
+	#community {
+		.inner {
+			width: 100%;
+			padding: 0vw 5vw;
+		}
+	}
+}
+
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: $mobile) {
+	#faq {
+		padding: 200px 0 160px 0;
+		.inner {
+			width: 100%;
+			padding: 5vw 0;
+			flex-wrap: wrap;
+			flex-direction: column;
+			.lineBox {
+				width: 85vw;
+				height: 250px;
+				margin: 0 auto;
+				margin-bottom: 80px;
+				h1 {
+					width: auto;
+					font-size: 35px;
+				}
+				&::after {
+					top: 20%;
+					left: 55%;
+					width: 55vw;
+					height: 55vw;
+				}
+			}
+			.container {
+				max-width: 85vw;
+			}
+		}
+	}
+	#community {
+		.inner {
+			table {
+				tr {
+					th {
+						&:nth-of-type(1) {
+							width: 13%;
+						}
+						&:nth-of-type(3) {
+							width: 20%;
+						}
+						&:nth-of-type(4) {
+							// 작성일을 없앤다
+							width: 0%;
+							display: none;
+						}
+					}
+					td {
+						&:nth-of-type(4) {
+							display: none;
+						}
 					}
 				}
 			}

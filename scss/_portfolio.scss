@@ -170,3 +170,44 @@
 		}
 	}
 }
+
+/* Media Query - Tablet 구간 */
+@media screen and (max-width: $tablet) {
+	#portfolio {
+		padding: 260px 0 100px 0;
+		.inner {
+			width: 100%;
+			padding: 0vw 5vw;
+			#gallery {
+				#searchBox {
+					#search {
+						width: 30vw;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Media Query - Mobile 구간 */
+@media screen and (max-width: $mobile) {
+	#portfolio {
+		.inner {
+			#gallery {
+				#searchBox {
+					#search {
+						width: 80%;
+					}
+					button {
+						width: 20%;
+					}
+				}
+				#imgList {
+					li {
+						width: calc(100% / 2);
+					}
+				}
+			}
+		}
+	}
+}
