@@ -14,15 +14,14 @@
 			width: 580px;
 			table {
 				width: 100%;
-				// border-spacing: 15px;
-				transform: translateX(-15px);
-				margin-top: -60px;
+				margin-top: -30px;
 				th {
 					padding-top: 40px;
-					font: 14px/1 "Montserrat", sans-serif;
+					padding-bottom: 10px;
+					font: 14px/1 'Montserrat', sans-serif;
 					color: $pointColor;
 					text-align: left;
-					input[type="submit"] {
+					input[type='submit'] {
 						@include btnStyle;
 						margin-top: -40px;
 						float: right;
@@ -31,17 +30,34 @@
 						cursor: pointer;
 					}
 				}
-				td {
-					position: relative;
-					border-bottom: 2px solid $pointColor;
-					// border-spacing: 1px solid red;
-					// border-left: 1px solid red;
+				tr {
+					&:nth-of-type(2),
+					&:nth-of-type(4) {
+						td {
+							&:first-child {
+								padding-right: 20px;
+							}
+						}
+					}
+					&:nth-of-type(6) {
+						td {
+							padding-bottom: 40px;
+						}
+					}
 				}
-				input[type="text"] {
+				// label {
+				// 	padding-bottom: 20px;
+				// }
+				input,
+				select,
+				textarea {
+					border: none;
+					border-bottom: 2px solid $pointColor;
+				}
+				input[type='text'] {
 					width: 100%;
 					height: 30px;
-					border: none;
-					font: 14px/1 "Open Sans", sans-serif;
+					font: 14px/1 'Open Sans', sans-serif;
 					color: $contentColor;
 					background: transparent;
 					padding-left: 10px;
@@ -52,8 +68,7 @@
 				select#purpose {
 					width: 100%;
 					height: 30px;
-					border: none;
-					font: 14px/1 "Open Sans", sans-serif;
+					font: 14px/1 'Open Sans', sans-serif;
 					color: $contentColor;
 					background: transparent;
 					padding-left: 5px;
@@ -62,9 +77,8 @@
 				textarea#message {
 					width: 100%;
 					height: 100px;
-					border: none;
 					resize: none;
-					font: 14px/1 "Open Sans", sans-serif;
+					font: 14px/1 'Open Sans', sans-serif;
 					color: $contentColor;
 					background: transparent;
 					padding: 10px;
@@ -75,9 +89,8 @@
 				}
 				p {
 					position: absolute;
-					// transform: translateY(2px);
 					font-size: 0;
-					font: 11px/1 "Open Sans", sans-serif;
+					font: 11px/1 'Open Sans', sans-serif;
 					color: hotpink;
 					margin-top: 8px;
 				}
@@ -95,7 +108,7 @@
 			transition: 0.5s;
 			h1 {
 				width: 50px;
-				font: 50px/1 "Montserrat";
+				font: 50px/1 'Montserrat';
 				color: $pointColor;
 				margin-bottom: 20px;
 			}
@@ -105,7 +118,7 @@
 					margin-left: 20px;
 					margin-right: 10px;
 					&::before {
-						content: "";
+						content: '';
 						transform: translate(-22px, 22px);
 						display: block;
 						width: 12px;
@@ -117,19 +130,18 @@
 				}
 			}
 			&::after {
-				content: "";
+				content: '';
 				position: absolute;
-				top: 150px;
-				left: 83%;
+				top: 40%;
+				left: 55%;
 				width: 400px;
 				height: 400px;
-				background: url(../img/watch2.png) no-repeat
-					center/cover;
+				background: url(../img/watch2.png) no-repeat center/cover;
 			}
 		}
 	}
 	&::after {
-		content: "";
+		content: '';
 		display: block;
 		clear: both;
 	}
@@ -154,15 +166,13 @@
 			margin-bottom: 20px;
 		}
 		&::after {
-			content: "";
+			content: '';
 			display: block;
 			clear: both;
 		}
 		.traffic {
 			float: right;
 			li {
-				float: left;
-				margin-left: 10px;
 				a {
 					@include btnStyle;
 					width: 53px;
@@ -171,9 +181,10 @@
 					font-size: 20px;
 					line-height: 53px;
 					border-radius: 50%;
-					border: 1px solid #ddd;
+					border: 1px solid rgba(0, 0, 0, 0);
 				}
 				&.on a {
+					border: 1px solid rgba(0, 0, 0, 0.1);
 					background: #f2f3f8;
 					color: $pointColor;
 				}
@@ -188,15 +199,16 @@
 					@include btnStyle;
 					background: $pointColor;
 					color: #fff;
+					border: 1px solid rgba(0, 0, 0, 0);
 					i {
 						margin-right: 5px;
 					}
 				}
 				&.on a {
+					border: 1px solid rgba(0, 0, 0, 0.1);
 					background: $pointColor;
 					background: #f2f3f8;
 					color: $pointColor;
-					border: 1px solid #ddd;
 				}
 			}
 		}
@@ -219,8 +231,8 @@
 					font-size: 35px;
 				}
 				&::after {
-					top: 200px;
-					left: 75%;
+					top: 40%;
+					left: 55%;
 					width: 30vw;
 					height: 30vw;
 				}
@@ -256,9 +268,32 @@
 				}
 				&::after {
 					top: 55%;
-					left: 65%;
-					width: 40vw;
-					height: 40vw;
+					left: 70%;
+					width: 45vw;
+					height: 45vw;
+				}
+			}
+		}
+	}
+	#location {
+		.inner {
+			.traffic {
+				display: none;
+				opacity: 0;
+			}
+			.branch {
+				width: 100%;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				li {
+					margin-right: 2%;
+					a {
+						width: auto;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
 				}
 			}
 		}

@@ -78,6 +78,9 @@ table {
   height: 380px;
   overflow: hidden;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 #members .inner article .pic .box {
@@ -86,10 +89,6 @@ table {
   background: #000dbf;
   opacity: 0.7;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -130px;
-  margin-top: -130px;
   z-index: 3;
   transform: scale(0);
   transition: 0.5s;
@@ -363,10 +362,10 @@ table {
 /* Media Query - Mobile 구간 */
 @media screen and (max-width: 539px) {
   #members .inner article .pic .box {
-    width: 100%;
     height: 100%;
-    margin-left: -25vw;
-    margin-top: -25vh;
+  }
+  #members .inner article .pic .box p {
+    margin-top: 65%;
   }
   #role #sliderText .btnBox {
     width: 100%;
@@ -966,11 +965,11 @@ table {
 }
 #contact .inner fieldset table {
   width: 100%;
-  transform: translateX(-15px);
-  margin-top: -60px;
+  margin-top: -30px;
 }
 #contact .inner fieldset table th {
   padding-top: 40px;
+  padding-bottom: 10px;
   font: 14px/1 "Montserrat", sans-serif;
   color: #000dbf;
   text-align: left;
@@ -994,14 +993,21 @@ table {
 #contact .inner fieldset table th input[type=submit]:hover {
   background-color: #040000;
 }
-#contact .inner fieldset table td {
-  position: relative;
+#contact .inner fieldset table tr:nth-of-type(2) td:first-child, #contact .inner fieldset table tr:nth-of-type(4) td:first-child {
+  padding-right: 20px;
+}
+#contact .inner fieldset table tr:nth-of-type(6) td {
+  padding-bottom: 40px;
+}
+#contact .inner fieldset table input,
+#contact .inner fieldset table select,
+#contact .inner fieldset table textarea {
+  border: none;
   border-bottom: 2px solid #000dbf;
 }
 #contact .inner fieldset table input[type=text] {
   width: 100%;
   height: 30px;
-  border: none;
   font: 14px/1 "Open Sans", sans-serif;
   color: #040000;
   background: transparent;
@@ -1013,7 +1019,6 @@ table {
 #contact .inner fieldset table select#purpose {
   width: 100%;
   height: 30px;
-  border: none;
   font: 14px/1 "Open Sans", sans-serif;
   color: #040000;
   background: transparent;
@@ -1023,7 +1028,6 @@ table {
 #contact .inner fieldset table textarea#message {
   width: 100%;
   height: 100px;
-  border: none;
   resize: none;
   font: 14px/1 "Open Sans", sans-serif;
   color: #040000;
@@ -1076,8 +1080,8 @@ table {
 #contact .inner .lineBox::after {
   content: "";
   position: absolute;
-  top: 150px;
-  left: 83%;
+  top: 40%;
+  left: 55%;
   width: 400px;
   height: 400px;
   background: url(../img/watch2.png) no-repeat center/cover;
@@ -1129,10 +1133,6 @@ table {
 #location .inner .traffic {
   float: right;
 }
-#location .inner .traffic li {
-  float: left;
-  margin-left: 10px;
-}
 #location .inner .traffic li a {
   display: block;
   width: 170px;
@@ -1149,12 +1149,13 @@ table {
   font-size: 20px;
   line-height: 53px;
   border-radius: 50%;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 #location .inner .traffic li a:hover {
   background-color: #040000;
 }
 #location .inner .traffic li.on a {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: #f2f3f8;
   color: #000dbf;
 }
@@ -1177,6 +1178,7 @@ table {
   transition: 0.4s;
   background: #000dbf;
   color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 #location .inner .branch li a:hover {
   background-color: #040000;
@@ -1185,10 +1187,10 @@ table {
   margin-right: 5px;
 }
 #location .inner .branch li.on a {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: #000dbf;
   background: #f2f3f8;
   color: #000dbf;
-  border: 1px solid #ddd;
 }
 
 /* Media Query - Tablet 구간 */
@@ -1208,8 +1210,8 @@ table {
     font-size: 35px;
   }
   #contact .inner .lineBox::after {
-    top: 200px;
-    left: 75%;
+    top: 40%;
+    left: 55%;
     width: 30vw;
     height: 30vw;
   }
@@ -1240,9 +1242,28 @@ table {
   }
   #contact .inner .lineBox::after {
     top: 55%;
-    left: 65%;
-    width: 40vw;
-    height: 40vw;
+    left: 70%;
+    width: 45vw;
+    height: 45vw;
+  }
+  #location .inner .traffic {
+    display: none;
+    opacity: 0;
+  }
+  #location .inner .branch {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  #location .inner .branch li {
+    margin-right: 2%;
+  }
+  #location .inner .branch li a {
+    width: auto;
+  }
+  #location .inner .branch li:last-child {
+    margin-right: 0;
   }
 }
 #join {
