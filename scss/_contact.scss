@@ -250,6 +250,7 @@
 /* Media Query - Mobile 구간 */
 @media screen and (max-width: $mobile) {
 	#contact {
+		padding: 200px 0 160px 0;
 		.inner {
 			flex-wrap: wrap;
 			flex-direction: column-reverse;
@@ -267,8 +268,8 @@
 					font-size: 35px;
 				}
 				&::after {
-					top: 55%;
-					left: 70%;
+					top: 50%;
+					left: 65%;
 					width: 45vw;
 					height: 45vw;
 				}
