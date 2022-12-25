@@ -566,38 +566,6 @@ body {
 				transform: translateX(-100px);
 				opacity: 0;
 				transition: 0.7s;
-				// .top {
-				// 	width: 0%;
-				// 	height: 5px;
-				// 	background: $pointColor;
-				// 	position: absolute;
-				// 	top: 0px;
-				// 	left: 0px;
-				// }
-				// .right {
-				// 	width: 5px;
-				// 	height: 0%;
-				// 	background: $pointColor;
-				// 	position: absolute;
-				// 	bottom: 0px;
-				// 	right: 0px;
-				// }
-				// .bottom {
-				// 	width: 0%;
-				// 	height: 5px;
-				// 	background: $pointColor;
-				// 	position: absolute;
-				// 	bottom: 0px;
-				// 	right: 0px;
-				// }
-				// .left {
-				// 	width: 5px;
-				// 	height: 0%;
-				// 	background: $pointColor;
-				// 	position: absolute;
-				// 	top: 0px;
-				// 	left: 0px;
-				// }
 				.content {
 					transform: translateX(-50px);
 					transition: 0.7s 0.3s;
@@ -695,7 +663,7 @@ body {
 			opacity: 1;
 			.content {
 				transform: translateX(0);
-				transition-delay: 0.1s;
+
 				opacity: 1;
 			}
 		}
@@ -721,7 +689,7 @@ body {
 				margin-right: 20px;
 				transform: translateX(100px);
 				opacity: 0;
-				transition-duration: 0.5s;
+				transition: 0.5s;
 				i {
 					color: $pointColor;
 					font-size: 30px;

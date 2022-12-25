@@ -69,6 +69,9 @@ table {
   margin-right: 20px;
   margin-bottom: 20px;
   cursor: pointer;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
 }
 #members .inner article:nth-of-type(3n) {
   margin-right: 0px;
@@ -131,6 +134,19 @@ table {
   content: "";
   display: block;
   clear: both;
+}
+#members.on .inner article {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#members.on .inner article:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#members.on .inner article:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+#members.on .inner article:nth-of-type(3) {
+  transition-delay: 0.4s;
 }
 
 /* Role */
@@ -200,6 +216,9 @@ table {
 #role #sliderText .inner article .wrap .content {
   padding: 50px 0px;
   float: left;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 1s;
 }
 #role #sliderText .inner article .wrap .content h3 {
   font-family: "Montserrat", sans-serif;
@@ -215,6 +234,9 @@ table {
 #role #sliderText .inner article .wrap .pic {
   position: absolute;
   right: 0;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 1s;
 }
 #role #sliderText .inner article .wrap .pic img {
   width: 100%;
@@ -243,6 +265,14 @@ table {
   content: "";
   display: block;
   clear: both;
+}
+#role.on #sliderText .inner article .wrap .content {
+  transform: translateX(0px);
+  opacity: 1;
+}
+#role.on #sliderText .inner article .wrap .pic {
+  transform: translateX(0px);
+  opacity: 1;
 }
 
 /* Rules */
@@ -303,6 +333,9 @@ table {
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.7s;
 }
 #rules .inner .contents article span {
   margin-right: 10px;
@@ -331,6 +364,19 @@ table {
 }
 #rules .inner .contents article:hover h3::after {
   width: 100%;
+}
+#rules.on .inner .contents article {
+  transform: translateX(0px);
+  opacity: 1;
+}
+#rules.on .inner .contents article:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#rules.on .inner .contents article:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+#rules.on .inner .contents article:nth-of-type(3) {
+  transition-delay: 0.4s;
 }
 
 /* Media Query - Tablet 구간 */
@@ -656,13 +702,23 @@ table {
   text-align: left;
   padding: 50px;
   margin-right: 20px;
-  transition: 0.5s;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 0.7s;
 }
 #faq .inner .lineBox h1 {
   width: 50px;
   font: 50px/1 "Montserrat";
   color: #000dbf;
   margin-bottom: 20px;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: 0.7s 0.3s;
+}
+#faq .inner .lineBox p {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: 0.7s 0.3s;
 }
 #faq .inner .lineBox::after {
   content: "";
@@ -672,6 +728,9 @@ table {
   width: 560px;
   height: 560px;
   background: url(../img/pen.png) no-repeat center/cover;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: 0.7s 0.4s;
 }
 #faq .inner .container {
   width: 580px;
@@ -683,6 +742,9 @@ table {
   padding: 0px 20px 20px;
   border-top: 2px solid #000dbf;
   overflow: hidden;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
 }
 #faq .inner .container .tab:last-child {
   border-bottom: 2px solid #000dbf;
@@ -765,6 +827,35 @@ table {
   color: #040000;
   z-index: 10;
 }
+#faq.on .inner .lineBox {
+  transform: translateX(0);
+  opacity: 1;
+}
+#faq.on .inner .lineBox h1,
+#faq.on .inner .lineBox p {
+  transform: translateX(0);
+  opacity: 1;
+}
+#faq.on .inner .lineBox::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+#faq.on .inner .container .tab {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#faq.on .inner .container .tab:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#faq.on .inner .container .tab:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+#faq.on .inner .container .tab:nth-of-type(3) {
+  transition-delay: 0.2s;
+}
+#faq.on .inner .container .tab:nth-of-type(4) {
+  transition-delay: 0.3s;
+}
 
 /* Community */
 #community {
@@ -799,6 +890,11 @@ table {
   border-collapse: collapse;
   margin-bottom: 50px;
 }
+#community .inner table tr {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
 #community .inner table tr:hover {
   font-weight: bold;
   background: #f2f3f8;
@@ -820,11 +916,12 @@ table {
 }
 #community .inner table tr td {
   padding: 20px 10px;
-  border-bottom: 1px solid #f2f3f8;
+  border-bottom: 1px solid rgba(242, 243, 248, 0);
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   color: #040000;
   text-align: center;
+  transition: 1s;
 }
 #community .inner table tr td:nth-of-type(2) {
   text-align: left;
@@ -877,6 +974,41 @@ table {
 }
 #community .inner .pagination .numbers a.on {
   background: #f2f3f8;
+}
+#community.on .inner table tr {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#community.on .inner table tr:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#community.on .inner table tr:nth-of-type(3) {
+  transition-delay: 0.1s;
+}
+#community.on .inner table tr:nth-of-type(4) {
+  transition-delay: 0.2s;
+}
+#community.on .inner table tr:nth-of-type(5) {
+  transition-delay: 0.3s;
+}
+#community.on .inner table tr:nth-of-type(6) {
+  transition-delay: 0.4s;
+}
+#community.on .inner table tr:nth-of-type(7) {
+  transition-delay: 0.5s;
+}
+#community.on .inner table tr:nth-of-type(8) {
+  transition-delay: 0.6s;
+}
+#community.on .inner table tr:nth-of-type(9) {
+  transition-delay: 0.7s;
+}
+#community.on .inner table tr:nth-of-type(10) {
+  transition-delay: 0.8s;
+}
+#community.on .inner table tr td {
+  border-bottom: 1px solid rgb(242, 243, 248);
+  transition-delay: 0.8s;
 }
 
 /* Media Query - Tablet 구간 */
@@ -993,6 +1125,11 @@ table {
 #contact .inner fieldset table th input[type=submit]:hover {
   background-color: #040000;
 }
+#contact .inner fieldset table tr {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
 #contact .inner fieldset table tr:nth-of-type(2) td:first-child, #contact .inner fieldset table tr:nth-of-type(4) td:first-child {
   padding-right: 20px;
 }
@@ -1054,13 +1191,23 @@ table {
   text-align: left;
   padding: 50px;
   margin-left: 20px;
-  transition: 0.5s;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.7s;
 }
 #contact .inner .lineBox h1 {
   width: 50px;
   font: 50px/1 "Montserrat";
   color: #000dbf;
   margin-bottom: 20px;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: 0.7s 0.3s;
+}
+#contact .inner .lineBox ul {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: 0.7s 0.3s;
 }
 #contact .inner .lineBox ul li {
   line-height: 30px;
@@ -1085,11 +1232,65 @@ table {
   width: 400px;
   height: 400px;
   background: url(../img/watch2.png) no-repeat center/cover;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: 0.7s 0.4s;
 }
 #contact::after {
   content: "";
   display: block;
   clear: both;
+}
+#contact.on .inner fieldset table tr {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#contact.on .inner fieldset table tr:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(3) {
+  transition-delay: 0.1s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(4) {
+  transition-delay: 0.2s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(5) {
+  transition-delay: 0.3s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(6) {
+  transition-delay: 0.4s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(7) {
+  transition-delay: 0.5s;
+}
+#contact.on .inner .lineBox {
+  transform: translateX(0);
+  opacity: 1;
+}
+#contact.on .inner .lineBox h1,
+#contact.on .inner .lineBox ul {
+  transform: translateX(0);
+  opacity: 1;
+}
+#contact.on .inner .lineBox::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+#contact.on .inner .container .tab {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#contact.on .inner .container .tab:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#contact.on .inner .container .tab:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+#contact.on .inner .container .tab:nth-of-type(3) {
+  transition-delay: 0.2s;
+}
+#contact.on .inner .container .tab:nth-of-type(4) {
+  transition-delay: 0.3s;
 }
 
 #location {
@@ -1124,6 +1325,9 @@ table {
   height: 500px;
   border: 1px solid #000;
   margin-bottom: 20px;
+  transform: translateY(100px);
+  transition: 1s;
+  opacity: 0;
 }
 #location .inner::after {
   content: "";
@@ -1191,6 +1395,10 @@ table {
   background: #000dbf;
   background: #f2f3f8;
   color: #000dbf;
+}
+#location.on .inner #map {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 /* Media Query - Tablet 구간 */
@@ -1310,8 +1518,9 @@ table {
 }
 #join .inner fieldset table th,
 #join .inner fieldset table td {
-  border-bottom: 1px solid #f2f3f8;
+  border-bottom: 1px solid rgba(242, 243, 248, 0);
   padding: 20px;
+  transition: 1s;
 }
 #join .inner fieldset table th {
   width: 20%;
@@ -1320,6 +1529,11 @@ table {
   text-align: left;
   font: 14px/1 "Montserrat";
   color: #000dbf;
+}
+#join .inner fieldset table tr {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
 }
 #join .inner fieldset table tr:nth-of-type(6) th, #join .inner fieldset table tr:nth-of-type(7) th {
   padding: 30px 0 30px 20px;
@@ -1389,6 +1603,41 @@ table {
 #join .inner fieldset .btnWrap input[type=reset]:hover,
 #join .inner fieldset .btnWrap input[type=submit]:hover {
   background-color: #040000;
+}
+#join.on .inner fieldset table tr {
+  transform: translateY(0px);
+  opacity: 1;
+}
+#join.on .inner fieldset table tr:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#join.on .inner fieldset table tr:nth-of-type(3) {
+  transition-delay: 0.1s;
+}
+#join.on .inner fieldset table tr:nth-of-type(4) {
+  transition-delay: 0.2s;
+}
+#join.on .inner fieldset table tr:nth-of-type(5) {
+  transition-delay: 0.3s;
+}
+#join.on .inner fieldset table tr:nth-of-type(6) {
+  transition-delay: 0.4s;
+}
+#join.on .inner fieldset table tr:nth-of-type(7) {
+  transition-delay: 0.5s;
+}
+#join.on .inner fieldset table tr:nth-of-type(8) {
+  transition-delay: 0.6s;
+}
+#join.on .inner fieldset table tr:nth-of-type(9) {
+  transition-delay: 0.7s;
+}
+#join.on .inner fieldset table tr:nth-of-type(10) {
+  transition-delay: 0.8s;
+}
+#join.on .inner fieldset table tr td {
+  border-bottom: 1px solid rgb(242, 243, 248);
+  transition-delay: 0.8s;
 }
 
 /* Media Query - Tablet 구간 */
@@ -2049,7 +2298,6 @@ body {
 }
 #magazine.on .inner .boxWrap .lineBox .content {
   transform: translateX(0);
-  transition-delay: 0.1s;
   opacity: 1;
 }
 
@@ -2089,7 +2337,7 @@ body {
   margin-right: 20px;
   transform: translateX(100px);
   opacity: 0;
-  transition-duration: 0.5s;
+  transition: 0.5s;
 }
 #skill .inner .wrap article i {
   color: #000dbf;
