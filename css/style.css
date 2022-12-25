@@ -1629,12 +1629,6 @@ table {
 #join.on .inner fieldset table tr:nth-of-type(8) {
   transition-delay: 0.6s;
 }
-#join.on .inner fieldset table tr:nth-of-type(9) {
-  transition-delay: 0.7s;
-}
-#join.on .inner fieldset table tr:nth-of-type(10) {
-  transition-delay: 0.8s;
-}
 #join.on .inner fieldset table tr td {
   border-bottom: 1px solid rgb(242, 243, 248);
   transition-delay: 0.8s;
