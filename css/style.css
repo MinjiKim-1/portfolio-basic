@@ -889,14 +889,11 @@ table {
   border-bottom: 2px solid #000dbf;
   border-collapse: collapse;
   margin-bottom: 50px;
-}
-#community .inner table tr {
   transform: translateY(100px);
   opacity: 0;
   transition: transform 1s, opacity 1s;
 }
 #community .inner table tr:hover {
-  font-weight: bold;
   background: #f2f3f8;
 }
 #community .inner table tr th {
@@ -975,40 +972,9 @@ table {
 #community .inner .pagination .numbers a.on {
   background: #f2f3f8;
 }
-#community.on .inner table tr {
+#community.on .inner table {
   transform: translateY(0px);
   opacity: 1;
-}
-#community.on .inner table tr:nth-of-type(1) {
-  transition-delay: 0s;
-}
-#community.on .inner table tr:nth-of-type(3) {
-  transition-delay: 0.1s;
-}
-#community.on .inner table tr:nth-of-type(4) {
-  transition-delay: 0.2s;
-}
-#community.on .inner table tr:nth-of-type(5) {
-  transition-delay: 0.3s;
-}
-#community.on .inner table tr:nth-of-type(6) {
-  transition-delay: 0.4s;
-}
-#community.on .inner table tr:nth-of-type(7) {
-  transition-delay: 0.5s;
-}
-#community.on .inner table tr:nth-of-type(8) {
-  transition-delay: 0.6s;
-}
-#community.on .inner table tr:nth-of-type(9) {
-  transition-delay: 0.7s;
-}
-#community.on .inner table tr:nth-of-type(10) {
-  transition-delay: 0.8s;
-}
-#community.on .inner table tr td {
-  border-bottom: 1px solid rgb(242, 243, 248);
-  transition-delay: 0.8s;
 }
 
 /* Media Query - Tablet 구간 */
@@ -1125,6 +1091,9 @@ table {
 #contact .inner fieldset table th input[type=submit]:hover {
   background-color: #040000;
 }
+#contact .inner fieldset table th:last-child {
+  padding-bottom: 0px;
+}
 #contact .inner fieldset table tr {
   transform: translateY(100px);
   opacity: 0;
@@ -1134,7 +1103,7 @@ table {
   padding-right: 20px;
 }
 #contact .inner fieldset table tr:nth-of-type(6) td {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 #contact .inner fieldset table input,
 #contact .inner fieldset table select,

@@ -29,6 +29,9 @@
 						background: $pointColor;
 						cursor: pointer;
 					}
+					&:last-child {
+						padding-bottom: 0px;
+					}
 				}
 				tr {
 					transform: translateY(100px);
@@ -44,7 +47,7 @@
 					}
 					&:nth-of-type(6) {
 						td {
-							padding-bottom: 40px;
+							padding-bottom: 20px;
 						}
 					}
 				}
