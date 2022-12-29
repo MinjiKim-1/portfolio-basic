@@ -21,17 +21,6 @@
 					font: 14px/1 'Montserrat', sans-serif;
 					color: $pointColor;
 					text-align: left;
-					input[type='submit'] {
-						@include btnStyle;
-						margin-top: -40px;
-						float: right;
-						border: none;
-						background: $pointColor;
-						cursor: pointer;
-					}
-					&:last-child {
-						padding-bottom: 0px;
-					}
 				}
 				tr {
 					transform: translateY(100px);
@@ -49,6 +38,15 @@
 						td {
 							padding-bottom: 20px;
 						}
+					}
+					input[type='submit'] {
+						@include btnStyle;
+
+						// margin-top: -40px;
+						float: right;
+						border: none;
+						background: $pointColor;
+						cursor: pointer;
 					}
 				}
 				input,
@@ -235,18 +233,14 @@
 		margin: 0 auto;
 		position: relative;
 		#map {
+			position: relative;
 			width: 100%;
 			height: 500px;
-			border: 1px solid #000;
+			border: 1px solid rgba(0, 0, 0, 0.1);
 			margin-bottom: 20px;
 			transform: translateY(100px);
 			transition: 1s;
 			opacity: 0;
-		}
-		&::after {
-			content: '';
-			display: block;
-			clear: both;
 		}
 		.traffic {
 			float: right;
@@ -284,7 +278,6 @@
 				}
 				&.on a {
 					border: 1px solid rgba(0, 0, 0, 0.1);
-					background: $pointColor;
 					background: #f2f3f8;
 					color: $pointColor;
 				}

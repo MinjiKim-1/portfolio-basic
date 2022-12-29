@@ -167,10 +167,10 @@ window.addEventListener('scroll', () => {
 			sections[index].classList.add('on');
 		}
 		if (scroll >= posArr[6] + base) {
-			counter(numbers[0], 348, 5);
-			counter(numbers[1], 12, 300);
-			counter(numbers[2], 618, 3);
-			counter(numbers[3], 1192, 0);
+			counter(numbers[0], 348, 1000);
+			counter(numbers[1], 12, 1000);
+			counter(numbers[2], 618, 1000);
+			counter(numbers[3], 1192, 1000);
 		}
 	});
 
@@ -233,11 +233,28 @@ function counter(el, num, time) {
 	let current_num = parseInt(el.innerText);
 	let count_num = num - current_num;
 	let interval = parseInt(time / count_num);
-	let timer = setInterval(() => {
-		current_num++;
-		if (current_num == num) {
-			clearInterval(timer);
-		}
-		el.innerText = current_num;
-	}, time);
+	if (current_num == num) {
+		return;
+	} else {
+		let timer = setInterval(() => {
+			current_num++;
+			if (current_num == num) {
+				clearInterval(timer);
+			}
+			el.innerText = current_num;
+		}, interval);
+	}
 }
+
+// function counter(el, num, time) {
+// 	let current_num = parseInt(el.innerText);
+// 	let count_num = num - current_num;
+// 	let interval = parseInt(time / count_num);
+// 	let timer = setInterval(() => {
+// 		current_num++;
+// 		if (current_num == num) {
+// 			clearInterval(timer);
+// 		}
+// 		el.innerText = current_num;
+// 	}, time);
+// }

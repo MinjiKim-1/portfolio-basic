@@ -1072,28 +1072,6 @@ table {
   color: #000dbf;
   text-align: left;
 }
-#contact .inner fieldset table th input[type=submit] {
-  display: block;
-  width: 170px;
-  padding: 20px;
-  font: 12px/1 "Montserrat", sans-serif;
-  color: #fff;
-  border-radius: 5px;
-  background-color: #000dbf;
-  text-align: center;
-  transition: 0.4s;
-  margin-top: -40px;
-  float: right;
-  border: none;
-  background: #000dbf;
-  cursor: pointer;
-}
-#contact .inner fieldset table th input[type=submit]:hover {
-  background-color: #040000;
-}
-#contact .inner fieldset table th:last-child {
-  padding-bottom: 0px;
-}
 #contact .inner fieldset table tr {
   transform: translateY(100px);
   opacity: 0;
@@ -1104,6 +1082,24 @@ table {
 }
 #contact .inner fieldset table tr:nth-of-type(6) td {
   padding-bottom: 20px;
+}
+#contact .inner fieldset table tr input[type=submit] {
+  display: block;
+  width: 170px;
+  padding: 20px;
+  font: 12px/1 "Montserrat", sans-serif;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #000dbf;
+  text-align: center;
+  transition: 0.4s;
+  float: right;
+  border: none;
+  background: #000dbf;
+  cursor: pointer;
+}
+#contact .inner fieldset table tr input[type=submit]:hover {
+  background-color: #040000;
 }
 #contact .inner fieldset table input,
 #contact .inner fieldset table select,
@@ -1290,18 +1286,14 @@ table {
   position: relative;
 }
 #location .inner #map {
+  position: relative;
   width: 100%;
   height: 500px;
-  border: 1px solid #000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   transform: translateY(100px);
   transition: 1s;
   opacity: 0;
-}
-#location .inner::after {
-  content: "";
-  display: block;
-  clear: both;
 }
 #location .inner .traffic {
   float: right;
@@ -1361,7 +1353,6 @@ table {
 }
 #location .inner .branch li.on a {
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #000dbf;
   background: #f2f3f8;
   color: #000dbf;
 }
