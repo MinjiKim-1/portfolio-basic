@@ -568,7 +568,7 @@ body {
 				transition: 0.7s;
 				.content {
 					transform: translateX(-50px);
-					transition: 0.7s 0.3s;
+					transition: 0.7s 0.1s;
 					h1 {
 						font-size: 50px;
 						margin-left: 8vw;
@@ -663,7 +663,6 @@ body {
 			opacity: 1;
 			.content {
 				transform: translateX(0);
-
 				opacity: 1;
 			}
 		}
@@ -733,23 +732,10 @@ body {
 				article {
 					transform: translateX(0px);
 					opacity: 1;
-					&:nth-of-type(1) {
-						transition-delay: 0s;
-					}
-					&:nth-of-type(2) {
-						transition-delay: 0.1s;
-					}
-					&:nth-of-type(3) {
-						transition-delay: 0.2s;
-					}
-					&:nth-of-type(4) {
-						transition-delay: 0.3s;
-					}
-					&:nth-of-type(5) {
-						transition-delay: 0.4s;
-					}
-					&:nth-of-type(6) {
-						transition-delay: 0.5s;
+					@for $i from 0 through 6 {
+						&:nth-of-type(#{$i + 1}) {
+							transition-delay: 0.1s * $i;
+						}
 					}
 				}
 			}

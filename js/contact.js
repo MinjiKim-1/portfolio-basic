@@ -10,10 +10,6 @@ const t_on = document.querySelectorAll('#location .traffic li')[0];
 const t_off = document.querySelectorAll('#location .traffic li')[1];
 const branch_btns = document.querySelectorAll('#location .branch li');
 
-/* scroll - 변수선언 */
-const sections = document.querySelectorAll('section');
-const base = -300;
-
 /* contact form */
 btnSubmit.addEventListener('click', (e) => {
 	if (!isTxt('name', 1)) e.preventDefault();
@@ -227,33 +223,3 @@ function moveTo(target) {
 	var moveLatlng = target;
 	map.setCenter(moveLatlng);
 }
-
-/* scroll */
-let posArr = [];
-
-console.log(sections);
-const posBox1 = sections[0].offsetTop;
-const posBox2 = sections[1].offsetTop;
-
-window.onload = function () {
-	sections[0].classList.add('on');
-};
-
-for (let el of sections) {
-	posArr.push(el.offsetTop);
-}
-console.log(posArr);
-
-window.addEventListener('scroll', () => {
-	let scroll = window.scrollY || window.pageYOffset;
-
-	sections.forEach((el, index) => {
-		if (scroll >= posArr[index] + base) {
-			sections.forEach((el, index) => {
-				el.classList.remove('on');
-				sections[index].classList.remove('on');
-			});
-			sections[index].classList.add('on');
-		}
-	});
-});

@@ -2,10 +2,7 @@
 const form = document.querySelector('#member');
 const btnSubmit = form.querySelector('input[type=submit]');
 
-/* load- 변수선언 */
-const section = document.querySelector('section');
-
-/* form validation*/
+/* form validation */
 btnSubmit.addEventListener('click', (e) => {
 	if (!isTxt('userid', 5)) e.preventDefault();
 	if (!isPwd('pwd1', 'pwd2', 8)) e.preventDefault();
@@ -164,9 +161,3 @@ function isPwd(el1, el2, len) {
 		return false;
 	}
 }
-
-/* load */
-
-window.onload = function () {
-	section.classList.add('on');
-};

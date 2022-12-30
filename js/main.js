@@ -32,7 +32,7 @@ let i = 0;
 /* scroll - 변수선언 */
 const sections = document.querySelectorAll('section');
 const scrView = document.querySelector('h1');
-const base = -300;
+const base = -window.innerHeight / 3;
 const bgWatch = document.querySelector('#introduce .inner .bgWatch');
 const bgPhone = document.querySelector('#concept .bgPhone');
 const numbers = document.querySelectorAll('#record .inner article strong span');

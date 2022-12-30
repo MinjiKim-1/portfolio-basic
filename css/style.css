@@ -856,6 +856,9 @@ table {
 #faq.on .inner .container .tab:nth-of-type(4) {
   transition-delay: 0.3s;
 }
+#faq.on .inner .container .tab:nth-of-type(5) {
+  transition-delay: 0.4s;
+}
 
 /* Community */
 #community {
@@ -1213,20 +1216,26 @@ table {
 #contact.on .inner fieldset table tr:nth-of-type(1) {
   transition-delay: 0s;
 }
-#contact.on .inner fieldset table tr:nth-of-type(3) {
+#contact.on .inner fieldset table tr:nth-of-type(2) {
   transition-delay: 0.1s;
 }
-#contact.on .inner fieldset table tr:nth-of-type(4) {
+#contact.on .inner fieldset table tr:nth-of-type(3) {
   transition-delay: 0.2s;
 }
-#contact.on .inner fieldset table tr:nth-of-type(5) {
+#contact.on .inner fieldset table tr:nth-of-type(4) {
   transition-delay: 0.3s;
 }
-#contact.on .inner fieldset table tr:nth-of-type(6) {
+#contact.on .inner fieldset table tr:nth-of-type(5) {
   transition-delay: 0.4s;
 }
-#contact.on .inner fieldset table tr:nth-of-type(7) {
+#contact.on .inner fieldset table tr:nth-of-type(6) {
   transition-delay: 0.5s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(7) {
+  transition-delay: 0.6s;
+}
+#contact.on .inner fieldset table tr:nth-of-type(8) {
+  transition-delay: 0.7s;
 }
 #contact.on .inner .lineBox {
   transform: translateX(0);
@@ -1256,6 +1265,9 @@ table {
 }
 #contact.on .inner .container .tab:nth-of-type(4) {
   transition-delay: 0.3s;
+}
+#contact.on .inner .container .tab:nth-of-type(5) {
+  transition-delay: 0.4s;
 }
 
 #location {
@@ -1571,23 +1583,29 @@ table {
 #join.on .inner fieldset table tr:nth-of-type(1) {
   transition-delay: 0s;
 }
-#join.on .inner fieldset table tr:nth-of-type(3) {
+#join.on .inner fieldset table tr:nth-of-type(2) {
   transition-delay: 0.1s;
 }
-#join.on .inner fieldset table tr:nth-of-type(4) {
+#join.on .inner fieldset table tr:nth-of-type(3) {
   transition-delay: 0.2s;
 }
-#join.on .inner fieldset table tr:nth-of-type(5) {
+#join.on .inner fieldset table tr:nth-of-type(4) {
   transition-delay: 0.3s;
 }
-#join.on .inner fieldset table tr:nth-of-type(6) {
+#join.on .inner fieldset table tr:nth-of-type(5) {
   transition-delay: 0.4s;
 }
-#join.on .inner fieldset table tr:nth-of-type(7) {
+#join.on .inner fieldset table tr:nth-of-type(6) {
   transition-delay: 0.5s;
 }
-#join.on .inner fieldset table tr:nth-of-type(8) {
+#join.on .inner fieldset table tr:nth-of-type(7) {
   transition-delay: 0.6s;
+}
+#join.on .inner fieldset table tr:nth-of-type(8) {
+  transition-delay: 0.7s;
+}
+#join.on .inner fieldset table tr:nth-of-type(9) {
+  transition-delay: 0.8s;
 }
 #join.on .inner fieldset table tr td {
   border-bottom: 1px solid rgb(242, 243, 248);
@@ -2150,7 +2168,7 @@ body {
 }
 #magazine .inner .boxWrap .lineBox .content {
   transform: translateX(-50px);
-  transition: 0.7s 0.3s;
+  transition: 0.7s 0.1s;
 }
 #magazine .inner .boxWrap .lineBox .content h1 {
   font-size: 50px;
@@ -2346,6 +2364,9 @@ body {
 }
 #skill.on .inner .wrap article:nth-of-type(6) {
   transition-delay: 0.5s;
+}
+#skill.on .inner .wrap article:nth-of-type(7) {
+  transition-delay: 0.6s;
 }
 
 #collection {

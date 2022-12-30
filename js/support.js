@@ -9,10 +9,6 @@ const close = menuFaq.querySelectorAll('.tab label');
 let titles = document.querySelectorAll('#community td a');
 // console.log(titles);
 
-/* scroll - 변수선언 */
-const sections = document.querySelectorAll('section');
-const base = -300;
-
 /* FAQ 라디오버튼 체크 해제 */
 close.forEach((el, index) => {
 	el.addEventListener('click', (e) => {
@@ -35,34 +31,4 @@ window.addEventListener('resize', () => {
 			}
 		});
 	}
-});
-
-/* scroll */
-let posArr = [];
-
-console.log(sections);
-const posBox1 = sections[0].offsetTop;
-const posBox2 = sections[1].offsetTop;
-
-window.onload = function () {
-	sections[0].classList.add('on');
-};
-
-for (let el of sections) {
-	posArr.push(el.offsetTop);
-}
-console.log(posArr);
-
-window.addEventListener('scroll', () => {
-	let scroll = window.scrollY || window.pageYOffset;
-
-	sections.forEach((el, index) => {
-		if (scroll >= posArr[index] + base) {
-			sections.forEach((el, index) => {
-				el.classList.remove('on');
-				sections[index].classList.remove('on');
-			});
-			sections[index].classList.add('on');
-		}
-	});
 });
