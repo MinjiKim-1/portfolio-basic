@@ -15,7 +15,7 @@ window.onload = function () {
 };
 
 window.addEventListener('scroll', () => {
-	activation();
+	activeScroll();
 });
 
 function getPos() {
@@ -24,7 +24,7 @@ function getPos() {
 	// console.log(posArr);
 }
 
-function activation() {
+function activeScroll() {
 	const scroll = window.scrollY || window.pageYOffset;
 	// console.log(scroll);
 
